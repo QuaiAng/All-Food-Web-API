@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\web_api\\DoAnChuyenNganh\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doanchuyennganh\\allfoodapi\\webapi\\models\\addusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\models\\addusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 207,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:51:56.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T03:28:50.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddUserModel.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Models\\AddUserModel.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Models\\AddUserModel.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Models\\AddUserModel.cs",
+              "RelativeToolTip": "AllFoodAPI\\WebApi\\Models\\AddUserModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T03:22:10.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Entities\\User.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\User.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T02:24:14.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAwwIsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T10:07:05.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\UserService.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
+              "RelativeToolTip": "AllFoodAPI\\Application\\Service\\UserService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAIEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T05:04:33.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAUwEkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T03:53:32.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\DTOs\\UserDTO.cs",
+              "ToolTip": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\Core\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T04:03:17.422Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
