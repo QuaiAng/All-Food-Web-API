@@ -1,6 +1,6 @@
 ﻿using AllFoodAPI.Core.DTOs;
 using AllFoodAPI.Core.Entities;
-using AllFoodAPI.Core.Interfaces;
+using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Infrastructure.Data;
 using AllFoodAPI.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         public async Task<bool> AddUser(User userEntity)
         {
             
-            _context.Users.Add(userEntity);
+             _context.Users.Add(userEntity);
             return await _context.SaveChangesAsync() > 0;
         }
 
@@ -28,9 +28,10 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+                var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id && u.Status == true);
                 if (user == null) return false;
-                _context.Users.Remove(user);
+                user.Status = false;
+                _context.Users.Update(user);
                 return await _context.SaveChangesAsync() > 0;
             }
             catch(Exception ex)
@@ -42,13 +43,12 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
-        public async Task<IEnumerable<UserDTO>> GetAllUsers()
+        public async Task<IEnumerable<User>> GetAllUsers()
         {
             try
             {
                 var users = await _context.Users
                               .Where(u => u.Status == true)
-                              .Select(user => UserDTO.FromEntity(user))
                               .ToListAsync();
 
                 return users;
@@ -57,11 +57,11 @@ namespace AllFoodAPI.Infrastructure.Repositories
             {
                 Console.WriteLine(ex.Message);
 
-                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+                throw;
             }
         }
 
-        public async Task<UserDTO?> GetUserById(int id)
+        public async Task<User?> GetUserById(int id)
         {
             try
             {
@@ -71,9 +71,9 @@ namespace AllFoodAPI.Infrastructure.Repositories
                 {
                     return null;
                 }
-                var userDTO = UserDTO.FromEntity(user);
+               
 
-                return userDTO;
+                return user;
             }
             catch (Exception ex)
             {
@@ -109,21 +109,13 @@ namespace AllFoodAPI.Infrastructure.Repositories
         }
 
 
-        public async Task<bool> UpdateUser(UpdateUserModel userUpdate, int id)
+        public async Task<bool> UpdateUser(User userUpdate)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == userUpdate.UserId);
             if (user == null)
             {
                 return false;
             }
-
-            // Cập nhật các trường của thực thể user từ userDTO
-            user.Email = userUpdate.Email;
-            user.FullName = userUpdate.FullName;
-            user.ImageUrl = userUpdate.ImageUrl;
-            user.Password = userUpdate.Password;
-            user.Phone = userUpdate.Phone;
-            user.Status = userUpdate.Status;
 
             _context.Update(user);
             return await _context.SaveChangesAsync() > 0;

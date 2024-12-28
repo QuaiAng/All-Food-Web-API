@@ -7174,11 +7174,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
+      "projectUniqueName": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
       "projectName": "AllFoodAPI",
-      "projectPath": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
+      "projectPath": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\obj\\",
+      "outputPath": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

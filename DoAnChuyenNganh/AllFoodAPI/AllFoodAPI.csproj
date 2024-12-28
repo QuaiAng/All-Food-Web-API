@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Mappings\" />
-    <Folder Include="Core\Exceptions\" />
   </ItemGroup>
 
 </Project>

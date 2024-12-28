@@ -1,6 +1,8 @@
 ﻿using AllFoodAPI.Core.DTOs;
 using AllFoodAPI.Core.Entities;
-using AllFoodAPI.Core.Interfaces;
+using AllFoodAPI.Core.Exceptions;
+using AllFoodAPI.Core.Interfaces.IRepository;
+using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Shared.Helpers;
 using AllFoodAPI.WebApi.Models;
 using System.Diagnostics.Metrics;
@@ -38,11 +40,11 @@ namespace AllFoodAPI.Application.Service
                 var userEntity = new User
                 {
                     UserId = 0,
-                    FullName = user.FullName,
-                    Email = user.Email,
+                    FullName = user.FullName.Trim(),
+                    Email = user.Email.Trim(),
                     Username = user.Username,
                     Password = hashedPassword,
-                    Phone = user.Phone,
+                    Phone = user.Phone.Trim(),
                     ImageUrl = "",
                     Salt = salt,
                     Status = true,
@@ -51,91 +53,167 @@ namespace AllFoodAPI.Application.Service
 
                 return await _userRepository.AddUser(userEntity);
             }
-            catch (Exception ex) { throw; }
+            catch { throw; }
 
         }
 
-
-        public Task<bool> DeleteUser(int id)
+        public async Task<bool> DeleteUser(int id)
         {
-            return _userRepository.DeleteUser(id);
+            
+            try
+            {
+                var user = await _userRepository.GetUserById(id);
+                if (user == null) throw new DuplicateException("User", "Không tìm thấy user");
+                return await _userRepository.DeleteUser(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting user with ID {id}: {ex.Message}");
+
+                throw;
+            }
         }
 
         public async Task<IEnumerable<UserDTO>> GetAllUsers()
         {
-            return await _userRepository.GetAllUsers();
+            try
+            {
+                var users = await _userRepository.GetAllUsers();
+
+                var userDTOs = users.Select(user => UserDTO.FromEntity(user));
+
+                return userDTOs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting all users: {ex.Message}");
+
+                throw new Exception("Có lỗi xảy ra khi lấy danh sách người dùng.");
+            }   
         }
+
 
         public async Task<UserDTO?> GetUserById(int id)
         {
-            var user = await _userRepository.GetUserById(id);
-
-            if (user == null)
+            try
             {
-                return null;
+                var user = await _userRepository.GetUserById(id);
+
+                if (user == null)
+                {
+                    return null;
+                }
+
+                var userDTO = UserDTO.FromEntity(user);
+
+                return userDTO;
             }
-
-            return user;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in GetUserById: {ex.Message}");
+                throw;
+            }
         }
 
-        public Task<bool> IsEmailExist(string email)
+        public async Task<bool> IsEmailExist(string email)
         {
-            return _userRepository.IsEmailExist(email);
+            try
+            {
+                return await _userRepository.IsEmailExist(email);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsEmailExist: {ex.Message}");
+                throw;
+            }
         }
 
-        public Task<bool> IsPhoneExist(string phone)
+        public async Task<bool> IsPhoneExist(string phone)
         {
-            return _userRepository.IsPhoneExist(phone);
-
+            try
+            {
+                return await _userRepository.IsPhoneExist(phone);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsPhoneExist: {ex.Message}");
+                throw;
+            }
         }
 
-        public Task<bool> IsUserNameExist(string username)
+        public async Task<bool> IsUserNameExist(string username)
         {
-            return _userRepository.IsUserNameExist(username);
-
+            try
+            {
+                return await _userRepository.IsUserNameExist(username);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in IsUserNameExist: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<string?> Login(string username, string password)
         {
-
-            // Kiểm tra người dùng trong repository
-            bool user = await _userRepository.Login(username, password);
-
-            if (user == false)
+            try
             {
-                return string.Empty;
+                // Kiểm tra người dùng trong repository
+                bool user = await _userRepository.Login(username, password);
+
+                if (!user)
+                {
+                    return string.Empty;
+                }
+
+                string token = _jwtService.GenerateToken(username);
+                return token;
             }
-            string Token = _jwtService.GenerateToken(username);
-            return Token;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Login: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<bool> UpdateUser(UpdateUserModel userUpdate, int id)
         {
             try
             {
-                var userTemp = await _userRepository.GetUserById(id);
-                if (userTemp == null)
+                var user = await _userRepository.GetUserById(id);
+                if (user == null)
                     throw new DuplicateException("User", "User not found");
 
-                if (userTemp.Email != userUpdate.Email)
+                if (user.Email != userUpdate.Email)
                 {
                     bool rs = await IsEmailExist(userUpdate.Email);
                     if (rs)
                         throw new DuplicateException("Email", "Email đã tồn tại");
                 }
 
-                if (userTemp.Phone != userUpdate.Phone)
+                if (user.Phone != userUpdate.Phone)
                 {
                     bool rs = await IsPhoneExist(userUpdate.Phone);
                     if (rs)
                         throw new DuplicateException("Phone", "Số điện thoại đã tồn tại");
                 }
 
-                var hashedPassword = PasswordHasher.HashPassword(userUpdate.Password, userTemp.Salt);
+                var hashedPassword = PasswordHasher.HashPassword(userUpdate.Password, user.Salt);
                 userUpdate.Password = hashedPassword;
-                return await _userRepository.UpdateUser(userUpdate, id);
+
+                if (user != null)
+                {
+                    user.Email = userUpdate.Email;
+                    user.FullName = userUpdate.FullName;
+                    user.ImageUrl = userUpdate.ImageUrl;
+                    user.Password = userUpdate.Password;
+                    user.Phone = userUpdate.Phone;
+                }
+
+
+                return await _userRepository.UpdateUser(user!);
             }
-            catch (Exception ex)
+            catch
             {
                 throw; // Throw lại exception để Controller xử lý
             }

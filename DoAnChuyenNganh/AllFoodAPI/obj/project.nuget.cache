@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K8O8VhK+vjc=",
+  "dgSpecHash": "+d65pGh7eH8=",
   "success": true,
-  "projectFilePath": "D:\\web_api\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
+  "projectFilePath": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\AllFoodAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

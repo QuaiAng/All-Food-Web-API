@@ -1,4 +1,4 @@
-﻿namespace AllFoodAPI.Shared.Helpers
+﻿namespace AllFoodAPI.Core.Exceptions
 {
     public class DuplicateException : Exception
     {

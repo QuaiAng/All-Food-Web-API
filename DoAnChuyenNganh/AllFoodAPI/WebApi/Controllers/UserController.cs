@@ -1,7 +1,8 @@
 ﻿using AllFoodAPI.Application.Service;
 using AllFoodAPI.Core.DTOs;
 using AllFoodAPI.Core.Entities;
-using AllFoodAPI.Core.Interfaces;
+using AllFoodAPI.Core.Exceptions;
+using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Shared.Helpers;
 using AllFoodAPI.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -24,9 +25,19 @@ namespace AllFoodAPI.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
-           var users =  await _service.GetAllUsers();
-            return Ok(users);
+            try
+            {
+                var users = await _service.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in GetAllUsers: {ex.Message}");
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Có lỗi xảy ra khi lấy danh sách người dùng." });
+            }
         }
+
 
         [Route("{id:int}")]
         [HttpGet]
@@ -48,7 +59,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 Console.WriteLine(ex.Message);
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Đã xảy ra lỗi trên server.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Có lỗi xảy ra" });
             }
         }
 
@@ -56,13 +67,24 @@ namespace AllFoodAPI.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<string>> Login([FromBody] LoginModel loginDTO)
         {
-            var token = await _service.Login(loginDTO.username, loginDTO.password);
-            if (string.IsNullOrEmpty(token))
+            try
             {
-                return NotFound(new { message = "Không tìm thấy user" });
+                var token = await _service.Login(loginDTO.username, loginDTO.password);
+                if (string.IsNullOrEmpty(token))
+                {
+                    return NotFound(new { message = "Không tìm thấy user" });
+                }
+                return Ok(new { Token = token });
             }
-            return Ok(new {Token = token});
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine($"Error in Login: {ex.Message}");
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Có lỗi xảy ra trong quá trình xử lý yêu cầu." });
+            }
         }
+
 
 
         //Hàm thêm mới 1 user
@@ -112,14 +134,23 @@ namespace AllFoodAPI.WebApi.Controllers
 
         //Hàm xóa 1 user khỏi CSDL
         [Route("remove/{id:int}")]
-        [HttpDelete]
+        [HttpPut]
         public async Task<IActionResult> DeleteUser(int id)
         {
             try
             {
-                if (id == 0) return BadRequest(new { Message = "ID không hợp lệ" });
+                if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
                 var result = await _service.DeleteUser(id);
-                return StatusCode(StatusCodes.Status204NoContent, new { success = true, message = "Xóa thành công" });
+                return StatusCode(StatusCodes.Status200OK, new { success = true, message = "Xóa thành công" });
+            }
+            catch(DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message
+                });
             }
             catch (Exception ex) {
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });

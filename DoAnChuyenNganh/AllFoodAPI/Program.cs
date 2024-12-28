@@ -1,6 +1,7 @@
 ﻿using AllFoodAPI.Application.Service;
 using AllFoodAPI.Core.Entities;
-using AllFoodAPI.Core.Interfaces;
+using AllFoodAPI.Core.Interfaces.IRepository;
+using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Infrastructure.Data;
 using AllFoodAPI.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -57,6 +58,8 @@ builder.Services.AddDbContext<AllfoodDbContext>(options =>
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+builder.Services.AddScoped<IAddressService, AddressService>();
 
 
 

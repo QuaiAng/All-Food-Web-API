@@ -52,11 +52,11 @@ namespace AllFoodAPI.Core.DTOs
             
                 UserId = user.UserId,
                 Status = user.Status,
-                ImageUrl = user.ImageUrl,
-                Phone = user.Phone,
+                ImageUrl = user.ImageUrl.Trim(),
+                Phone = user.Phone.Trim(),
                 Password = user.Password,
-                FullName = user.FullName,
-                Email = user.Email,
+                FullName = user.FullName.Trim(),
+                Email = user.Email.Trim(),
                 Username = user.Username,
                 Salt = user.Salt,
             };
@@ -75,11 +75,11 @@ namespace AllFoodAPI.Core.DTOs
 
                 UserId = userDTO.UserId,
                 Status = userDTO.Status,
-                ImageUrl = userDTO.ImageUrl,
-                Phone = userDTO.Phone,
+                ImageUrl = userDTO.ImageUrl.Trim(),
+                Phone = userDTO.Phone.Trim(),
                 Password = userDTO.Password,
-                FullName = userDTO.FullName,
-                Email = userDTO.Email,
+                FullName = userDTO.FullName.Trim(),
+                Email = userDTO.Email.Trim(),
                 Username= userDTO.Username,
                 Salt= userDTO.Salt,
 
