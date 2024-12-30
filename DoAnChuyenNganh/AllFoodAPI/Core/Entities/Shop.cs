@@ -21,6 +21,8 @@ public partial class Shop
 
     public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 
+    public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
+
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     public virtual ICollection<OrdersFromCu> OrdersFromCus { get; set; } = new List<OrdersFromCu>();

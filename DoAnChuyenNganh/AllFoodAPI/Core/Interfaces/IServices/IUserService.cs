@@ -1,6 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
-using AllFoodAPI.Core.Entities;
-using AllFoodAPI.WebApi.Models;
+using AllFoodAPI.WebApi.Models.User;
 
 namespace AllFoodAPI.Core.Interfaces.IService
 {
@@ -8,7 +7,7 @@ namespace AllFoodAPI.Core.Interfaces.IService
     {
         Task<IEnumerable<UserDTO>> GetAllUsers();
         Task<UserDTO?> GetUserById(int id);
-        Task<string?> Login(string username, string password);
+        Task<ResponseLoginModel?> Login(string username, string password);
 
         Task<bool> AddUser(AddUserModel user);
         Task<bool> UpdateUser(UpdateUserModel user, int id);

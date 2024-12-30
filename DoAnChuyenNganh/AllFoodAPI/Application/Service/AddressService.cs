@@ -1,11 +1,7 @@
 ﻿using AllFoodAPI.Core.DTOs;
-using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IService;
-using AllFoodAPI.Infrastructure.Repositories;
-using AllFoodAPI.WebApi.Models;
-using System.Diagnostics.Metrics;
 
 namespace AllFoodAPI.Application.Service
 {
@@ -14,15 +10,15 @@ namespace AllFoodAPI.Application.Service
         private readonly IAddressRepository _repository;
         private readonly IUserRepository _userRepository;
 
-        public AddressService(IAddressRepository repository, IUserRepository userRepository) 
+        public AddressService(IAddressRepository repository, IUserRepository userRepository)
         {
-        
+
             _repository = repository;
             _userRepository = userRepository;
 
 
         }
-       
+
         public async Task<bool> AddAddress(AddressDTO addressDTO)
         {
             try
@@ -36,7 +32,7 @@ namespace AllFoodAPI.Application.Service
             {
                 Console.WriteLine(ex.Message);
 
-                throw new ApplicationException("Xảy ra lỗi khi thêm", ex);
+                throw;
             }
         }
 
@@ -53,7 +49,7 @@ namespace AllFoodAPI.Application.Service
                 Console.WriteLine(ex.Message);
                 throw;
             }
-                
+
         }
 
         public async Task<AddressDTO?> GetAddressById(int id)
@@ -62,13 +58,13 @@ namespace AllFoodAPI.Application.Service
             {
                 var address = await _repository.GetAddressById(id);
                 if (address == null)
-                { 
+                {
                     return null;
                 }
                 var addressDTO = AddressDTO.FromEntity(address);
                 return addressDTO;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
 
@@ -78,7 +74,7 @@ namespace AllFoodAPI.Application.Service
 
         public async Task<IEnumerable<AddressDTO>> GetAllAddresses()
         {
-            
+
             try
             {
                 var addresses = await _repository.GetAllAddresses();
@@ -103,9 +99,26 @@ namespace AllFoodAPI.Application.Service
             return await _repository.IsAddressExist(address, userID);
         }
 
-        public Task<bool> UpdateAddress(int id, string address)
+        public async Task<bool> UpdateAddress(int id, string address)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (await _userRepository.GetUserById(id) == null) throw new DuplicateException("User ID", "User ID không tồn tại");
+                if (await IsAddressExist(address.Trim(), id)) throw new DuplicateException("Address", "Địa chỉ này đã tồn tại cho user này");
+                var addressUpdate = await _repository.GetAddressById(id);
+                if (addressUpdate == null)
+                {
+                    return false;
+                }
+                addressUpdate.Address1 = address;
+                return await _repository.UpdateAddress(addressUpdate);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw;
+            }
         }
     }
 }

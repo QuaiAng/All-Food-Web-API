@@ -2,7 +2,6 @@
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
 
 namespace AllFoodAPI.Infrastructure.Repositories
 {
@@ -10,20 +9,20 @@ namespace AllFoodAPI.Infrastructure.Repositories
     {
         private readonly AllfoodDbContext _context;
 
-        public AddressRepository(AllfoodDbContext context) 
+        public AddressRepository(AllfoodDbContext context)
         {
-        
+
             _context = context;
-        
+
         }
         public async Task<bool> AddAddress(Address address)
         {
             try
             {
-                 _context.Addresses.Add(address);
+                _context.Addresses.Add(address);
                 return await _context.SaveChangesAsync() > 0;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
 
@@ -40,12 +39,12 @@ namespace AllFoodAPI.Infrastructure.Repositories
                 _context.Addresses.Remove(address);
                 return await _context.SaveChangesAsync() > 0;
             }
-            catch(Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
                 throw;
             }
-                                
+
         }
 
         public async Task<Address?> GetAddressById(int id)
@@ -54,7 +53,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
             {
                 var adddress = await _context.Addresses.SingleOrDefaultAsync(u => u.AddressId == id);
 
-                if(adddress == null)
+                if (adddress == null)
                 {
                     return null;
                 }
@@ -86,12 +85,26 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
         public async Task<bool> IsAddressExist(string address, int userID)
         {
-            return await _context.Addresses.SingleOrDefaultAsync(u => u.Address1 == address && u.AddressId == userID) != null; 
+            return await _context.Addresses.SingleOrDefaultAsync(u => u.Address1 == address && u.AddressId == userID) != null;
         }
 
-        public Task<bool> UpdateAddress(int id, string address)
+        public async Task<bool> UpdateAddress(Address addressUpdate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var address = await _context.Addresses.SingleOrDefaultAsync(u => u.AddressId == addressUpdate.AddressId);
+                if (address == null)
+                {
+                    return false;
+                }
+                _context.Addresses.Update(address);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
 }

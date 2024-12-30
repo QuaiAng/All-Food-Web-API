@@ -1,4 +1,4 @@
-﻿namespace AllFoodAPI.WebApi.Models
+﻿namespace AllFoodAPI.WebApi.Models.User
 {
 
     public class LoginModel

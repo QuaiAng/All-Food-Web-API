@@ -1,5 +1,4 @@
-﻿using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 public class PasswordHasher
@@ -20,7 +19,7 @@ public class PasswordHasher
     //Hàm băm mật khẩu
     public static string HashPassword(string password, string salt)
     {
-       
+
         using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(salt)))
         {
             var hashBytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));

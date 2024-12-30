@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\repositories\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\webapi\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\application\\service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedHeight": 207,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
-              "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\UserService.cs",
-              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
-              "RelativeToolTip": "AllFoodAPI\\Application\\Service\\UserService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwDcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T13:40:26.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddressController.cs",
-              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
-              "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
-              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
-              "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAvwFgAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T04:10:59.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddressService.cs",
-              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\AddressService.cs",
-              "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\AddressService.cs",
-              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\AddressService.cs",
-              "RelativeToolTip": "AllFoodAPI\\Application\\Service\\AddressService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAiwB8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T04:10:49.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddressRepository.cs",
-              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\AddressRepository.cs",
-              "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\AddressRepository.cs",
-              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\AddressRepository.cs",
-              "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\AddressRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAiwFgAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T03:59:14.057Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

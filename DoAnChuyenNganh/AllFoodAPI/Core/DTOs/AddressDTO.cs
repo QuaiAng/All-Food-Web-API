@@ -8,10 +8,10 @@ namespace AllFoodAPI.Core.DTOs
         public int UserId { get; set; }
         public string Address { get; set; } = null!;
 
-      
+
         public AddressDTO() { }
 
-        
+
 
         public static Address ToEntity(AddressDTO addressDTO)
         {

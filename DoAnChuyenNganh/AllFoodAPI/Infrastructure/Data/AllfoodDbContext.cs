@@ -47,9 +47,9 @@ public partial class AllfoodDbContext : DbContext
 
     public virtual DbSet<Voucher> Vouchers { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=localhost;database=allfood_db;user=root", ServerVersion.Parse("10.4.32-mariadb"));
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+//        => optionsBuilder.UseMySql("server=localhost;database=allfood_db;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.32-mariadb"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -153,12 +153,22 @@ public partial class AllfoodDbContext : DbContext
 
             entity.ToTable("category");
 
+            entity.HasIndex(e => e.ShopId, "fk_category_shop");
+
             entity.Property(e => e.CategoryId)
                 .HasColumnType("int(11)")
                 .HasColumnName("category_id");
             entity.Property(e => e.CategoryName)
                 .HasColumnType("text")
                 .HasColumnName("category_name");
+            entity.Property(e => e.ShopId)
+                .HasColumnType("int(11)")
+                .HasColumnName("shop_id");
+
+            entity.HasOne(d => d.Shop).WithMany(p => p.Categories)
+                .HasForeignKey(d => d.ShopId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_category_shop");
         });
 
         modelBuilder.Entity<Image>(entity =>

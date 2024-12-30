@@ -68,6 +68,383 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.AddressController",
+    "Method": "UpdateAddress",
+    "RelativePath": "api/address/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "address",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/category",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "GetCategoryById",
+    "RelativePath": "api/category/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.CategoryDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "DeleteCategory",
+    "RelativePath": "api/category/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "AddCategory",
+    "RelativePath": "api/category/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryDTO",
+        "Type": "AllFoodAPI.Core.DTOs.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/category/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryDTO",
+        "Type": "AllFoodAPI.Core.DTOs.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ImageController",
+    "Method": "GetAllImages",
+    "RelativePath": "api/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ImageController",
+    "Method": "GetImageById",
+    "RelativePath": "api/image/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.Entities.Image",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ImageController",
+    "Method": "DeleteImage",
+    "RelativePath": "api/image/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ImageController",
+    "Method": "AddImage",
+    "RelativePath": "api/image/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "image",
+        "Type": "AllFoodAPI.Core.DTOs.ImageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ImageController",
+    "Method": "UpdateImage",
+    "RelativePath": "api/image/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageURL",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "GetAllProducts",
+    "RelativePath": "api/product",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "GetProductById",
+    "RelativePath": "api/product/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.ProductDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/product/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "AddCategory",
+    "RelativePath": "api/product/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "AllFoodAPI.WebApi.Models.Product.AddProductModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "UpdateCategory",
+    "RelativePath": "api/product/update/shopid={shopId}/productId={productId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "AllFoodAPI.WebApi.Models.Product.UpdateProductModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "shopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "GetAllShops",
+    "RelativePath": "api/shop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "GetShopById",
+    "RelativePath": "api/shop/{shopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.AddressDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "AddShop",
+    "RelativePath": "api/shop/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shop",
+        "Type": "AllFoodAPI.WebApi.Models.Shop.AddShopModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "DeleteShop",
+    "RelativePath": "api/shop/remove/{shopId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "UpdateShop",
+    "RelativePath": "api/shop/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shop",
+        "Type": "AllFoodAPI.WebApi.Models.Shop.UpdateShopModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/user",
@@ -113,7 +490,7 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "AllFoodAPI.WebApi.Models.AddUserModel",
+        "Type": "AllFoodAPI.WebApi.Models.User.AddUserModel",
         "IsRequired": true
       }
     ],
@@ -129,27 +506,17 @@
     "Parameters": [
       {
         "Name": "loginDTO",
-        "Type": "AllFoodAPI.WebApi.Models.LoginModel",
+        "Type": "AllFoodAPI.WebApi.Models.User.LoginModel",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.UserController",
     "Method": "DeleteUser",
     "RelativePath": "api/user/remove/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -171,7 +538,7 @@
     "Parameters": [
       {
         "Name": "userUpdate",
-        "Type": "AllFoodAPI.WebApi.Models.UpdateUserModel",
+        "Type": "AllFoodAPI.WebApi.Models.User.UpdateUserModel",
         "IsRequired": true
       },
       {

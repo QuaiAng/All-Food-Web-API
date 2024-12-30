@@ -1,7 +1,9 @@
 ﻿using AllFoodAPI.Application.Service;
 using AllFoodAPI.Core.Entities;
+using AllFoodAPI.Core.Interfaces.IRepositories;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IService;
+using AllFoodAPI.Core.Interfaces.IServices;
 using AllFoodAPI.Infrastructure.Data;
 using AllFoodAPI.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -60,6 +62,14 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IShopService, ShopService>();
+builder.Services.AddScoped<IShopRepository, ShopRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 

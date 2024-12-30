@@ -3,9 +3,7 @@ using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IService;
-using AllFoodAPI.Shared.Helpers;
-using AllFoodAPI.WebApi.Models;
-using System.Diagnostics.Metrics;
+using AllFoodAPI.WebApi.Models.User;
 
 namespace AllFoodAPI.Application.Service
 {
@@ -59,7 +57,7 @@ namespace AllFoodAPI.Application.Service
 
         public async Task<bool> DeleteUser(int id)
         {
-            
+
             try
             {
                 var user = await _userRepository.GetUserById(id);
@@ -89,7 +87,7 @@ namespace AllFoodAPI.Application.Service
                 Console.WriteLine($"Error getting all users: {ex.Message}");
 
                 throw new Exception("Có lỗi xảy ra khi lấy danh sách người dùng.");
-            }   
+            }
         }
 
 
@@ -154,20 +152,25 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public async Task<string?> Login(string username, string password)
+        public async Task<ResponseLoginModel?> Login(string username, string password)
         {
             try
             {
                 // Kiểm tra người dùng trong repository
-                bool user = await _userRepository.Login(username, password);
+                var user = await _userRepository.Login(username, password);
 
-                if (!user)
+                if (user == null)
                 {
-                    return string.Empty;
+                    return null;
                 }
 
                 string token = _jwtService.GenerateToken(username);
-                return token;
+                var response = new ResponseLoginModel
+                {
+                    UserId = user.UserId,
+                    Token = token,
+                };
+                return response;
             }
             catch (Exception ex)
             {

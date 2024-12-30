@@ -1,6 +1,4 @@
 ﻿using AllFoodAPI.Core.DTOs;
-using AllFoodAPI.WebApi.Models;
-
 namespace AllFoodAPI.Core.Interfaces.IService
 {
     public interface IAddressService

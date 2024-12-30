@@ -1,12 +1,9 @@
-﻿using AllFoodAPI.Application.Service;
-using AllFoodAPI.Core.DTOs;
-using AllFoodAPI.Core.Entities;
+﻿using AllFoodAPI.Core.DTOs;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Shared.Helpers;
-using AllFoodAPI.WebApi.Models;
+using AllFoodAPI.WebApi.Models.User;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.Metrics;
 
 namespace AllFoodAPI.WebApi.Controllers
 {
@@ -65,20 +62,20 @@ namespace AllFoodAPI.WebApi.Controllers
 
         [Route("login")]
         [HttpPost]
-        public async Task<ActionResult<string>> Login([FromBody] LoginModel loginDTO)
+        public async Task<IActionResult> Login([FromBody] LoginModel loginDTO)
         {
             try
             {
-                var token = await _service.Login(loginDTO.username, loginDTO.password);
-                if (string.IsNullOrEmpty(token))
+                var response = await _service.Login(loginDTO.username, loginDTO.password);
+                if (response == null)
                 {
-                    return NotFound(new { message = "Không tìm thấy user" });
+                    return NotFound(new { success = false, message = "Không tìm thấy user" });
                 }
-                return Ok(new { Token = token });
+                return Ok(new { UserId = response.UserId, Token = response.Token });
             }
             catch (Exception ex)
             {
-                
+
                 Console.WriteLine($"Error in Login: {ex.Message}");
 
                 return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Có lỗi xảy ra trong quá trình xử lý yêu cầu." });
@@ -100,18 +97,18 @@ namespace AllFoodAPI.WebApi.Controllers
                    || string.IsNullOrEmpty(user.Phone))
             {
 
-                return BadRequest(new {success = false,  message = "Không được để trống các thông tin cần thiết" });
+                return BadRequest(new { success = false, message = "Không được để trống các thông tin cần thiết" });
 
             }
 
-            if (user.Phone.Length != 10) return BadRequest(new {success = false, message = "Số điện thoại không hợp lệ" });
+            if (user.Phone.Length != 10) return BadRequest(new { success = false, message = "Số điện thoại không hợp lệ" });
 
             if (!DataValidator.IsValidEmail(user.Email)) return BadRequest(new { success = false, message = "Email không hợp lệ" });
 
             try
             {
                 var result = await _service.AddUser(user);
-              
+
                 return Ok(new { success = true, message = "Thêm thành công" });
 
             }
@@ -124,17 +121,18 @@ namespace AllFoodAPI.WebApi.Controllers
                     message = ex.Message
                 });
             }
-            catch(Exception ex) {
-            
+            catch (Exception ex)
+            {
+
                 return StatusCode(500, new { success = false, message = ex.Message });
-            
+
             }
 
         }
 
         //Hàm xóa 1 user khỏi CSDL
         [Route("remove/{id:int}")]
-        [HttpPut]
+        [HttpDelete]
         public async Task<IActionResult> DeleteUser(int id)
         {
             try
@@ -143,7 +141,7 @@ namespace AllFoodAPI.WebApi.Controllers
                 var result = await _service.DeleteUser(id);
                 return StatusCode(StatusCodes.Status200OK, new { success = true, message = "Xóa thành công" });
             }
-            catch(DuplicateException ex)
+            catch (DuplicateException ex)
             {
                 return BadRequest(new
                 {
@@ -152,10 +150,11 @@ namespace AllFoodAPI.WebApi.Controllers
                     message = ex.Message
                 });
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
             }
-           
+
         }
 
         //Hàm sửa 1 user 
