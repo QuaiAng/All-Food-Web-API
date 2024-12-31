@@ -1,30 +1,32 @@
 ﻿using AllFoodAPI.Core.DTOs;
-using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
-using AllFoodAPI.Core.Interfaces.IService;
-using AllFoodAPI.WebApi.Models.Shop;
+using AllFoodAPI.Core.Interfaces.IServices;
+using AllFoodAPI.WebApi.Models.Report;
+using AllFoodAPI.WebApi.Models.Review;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace AllFoodAPI.WebApi.Controllers
 {
-    [Route("api/shop")]
+    [Route("api/report")]
     [ApiController]
-    public class ShopController : ControllerBase
+    public class ReportController : ControllerBase
     {
-        private readonly IShopService _service;
+        private readonly IReportService _service;
 
-        public ShopController(IShopService service)
+        public ReportController(IReportService service) 
         {
             _service = service;
         }
+
+
+
         [HttpGet]
-        public async Task<IActionResult> GetAllShops()
+        public async Task<IActionResult> GetAllReports()
         {
             try
             {
-                var shops = await _service.GetAllShops();
-                return Ok(shops);
+                var reports = await _service.GetAllReports();
+                return Ok(reports);
             }
             catch (Exception ex)
             {
@@ -32,15 +34,15 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
-        [HttpGet("{shopId:int}")]
-        public async Task<ActionResult<AddressDTO>> GetShopById(int shopId)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ReportDTO>> GetReportById(int id)
         {
-            if (shopId == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
+            if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
             try
             {
-                var shop = await _service.GetShopById(shopId);
-                if (shop == null) return NotFound(new { success = false, message = "Không tìm thấy shop này" });
-                return Ok(shop);
+                var report = await _service.GetReportById(id);
+                if (report == null) return NotFound(new { success = false, message = "Không tìm thấy report này" });
+                return Ok(report);
             }
             catch (Exception ex)
             {
@@ -51,15 +53,15 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddShop([FromBody] AddShopModel shop)
+        public async Task<IActionResult> AddReport([FromBody] AddReportModel report)
         {
-            if (shop.UserId == 0) return BadRequest(new { success = false, message = "ID user không hợp lệ" });
-            if (string.IsNullOrEmpty(shop.Address)) return BadRequest(new { success = false, message = "Địa chỉ không được rỗng" });
-            if (string.IsNullOrEmpty(shop.Phone) || shop.Phone.Length != 10) return BadRequest(new { success = false, message = "Số điện thoại không hợp lệ" });
-            if (string.IsNullOrEmpty(shop.ShopName)) return BadRequest(new { success = false, message = "Tên shop không được rỗng" });
+            if (report.ProductId == 0) return BadRequest(new { success = false, message = "Product ID không hợp lệ" });
+            if (report.UserId == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ" });
+            if (string.IsNullOrEmpty(report.Reason)) return BadRequest(new { success = false, message = "Lí do không được rỗng" });
+
             try
             {
-                var result = await _service.AddShop(shop);
+                var result = await _service.AddReport(report);
                 return result
                     ? Ok(new { success = true, message = "Thêm thành công" })
                     : StatusCode(StatusCodes.Status500InternalServerError, new
@@ -84,14 +86,20 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
 
-        [HttpDelete("remove/{shopId:int}")]
-        public async Task<IActionResult> DeleteShop(int shopId)
+        [HttpDelete("remove/{id:int}")]
+        public async Task<IActionResult> DeleteReport(int id)
         {
             try
             {
-                if (shopId == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
-                var result = await _service.DeleteShop(shopId);
-                return Ok(new { success = true, messenger = "Xóa thành công" });
+                if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
+                var result = await _service.DeleteReport(id);
+                return result
+                   ? Ok(new { success = true, message = "Xóa thành công" })
+                   : StatusCode(StatusCodes.Status500InternalServerError, new
+                   {
+                       success = false,
+                       message = "Xóa thất bại"
+                   });
             }
             catch (DuplicateException ex)
             {
@@ -109,15 +117,14 @@ namespace AllFoodAPI.WebApi.Controllers
 
         }
         [HttpPut("update/{id:int}")]
-        public async Task<IActionResult> UpdateShop([FromBody] UpdateShopModel shop, int id)
+        public async Task<IActionResult> UpdateReport([FromBody] string reason, int id)
         {
             try
             {
-                if (id == 0) return BadRequest(new { success = false, message = "ID shop không hợp lệ" });
-                if (string.IsNullOrEmpty(shop.Address)) return BadRequest(new { success = false, message = "Địa chỉ không được rỗng" });
-                if (string.IsNullOrEmpty(shop.Phone) || shop.Phone.Length != 10) return BadRequest(new { success = false, message = "Số điện thoại không hợp lệ" });
-                if (string.IsNullOrEmpty(shop.ShopName)) return BadRequest(new { success = false, message = "Tên shop không được rỗng" });
-                var result = await _service.UpdateShop(shop, id);
+                if (id == 0) return BadRequest(new { success = false, message = "Report ID không hợp lệ" });
+                if (string.IsNullOrEmpty(reason)) return BadRequest(new { success = false, message = "Lí do không được rỗng" });
+
+                var result = await _service.UpdateReport(reason, id);
                 return result ? Ok(new
                 {
                     success = true,
@@ -125,7 +132,7 @@ namespace AllFoodAPI.WebApi.Controllers
                 }) : StatusCode(StatusCodes.Status500InternalServerError, new
                 {
                     success = false,
-                    message = "Xảy ra lỗi"
+                    message = "Cập nhật thất bại"
                 });
             }
             catch (DuplicateException ex)
@@ -144,5 +151,6 @@ namespace AllFoodAPI.WebApi.Controllers
             }
 
         }
+
     }
 }

@@ -34,6 +34,8 @@ namespace AllFoodAPI.Application.Service
         {
             try
             {
+                if (await _repository.GetCategoryById(id) == null)
+                    throw new DuplicateException("ID", $"Không tồn tại loại có ID {id}");
                 return await _repository.DeleteCategory(id);
             }
             catch
@@ -60,9 +62,9 @@ namespace AllFoodAPI.Application.Service
         {
             try
             {
-                var categoryDTO = await _repository.GetCategoryById(id);
-                if (categoryDTO == null) return null;
-                return CategoryDTO.FromEntity(categoryDTO);
+                var category = await _repository.GetCategoryById(id);
+                if (category == null) return null;
+                return CategoryDTO.FromEntity(category);
             }
             catch
             {

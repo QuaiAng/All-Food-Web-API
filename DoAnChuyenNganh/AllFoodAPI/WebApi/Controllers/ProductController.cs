@@ -76,14 +76,21 @@ namespace AllFoodAPI.WebApi.Controllers
 
         }
 
-        [HttpDelete("{id:int}")]
+        [HttpDelete("remove/{id:int}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             try
             {
                 if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
                 var result = await _service.DeleteProduct(id);
-                return result ? Ok(new { success = true, message = "Xóa thành công" }) : StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Thêm thất bại" });
+                return result
+                    ? Ok(new { success = true, message = "Xóa thành công" })
+                    : StatusCode(StatusCodes.Status500InternalServerError, new
+
+                    {
+                        success = false,
+                        message = "Thêm thất bại"
+                    });
             }
             catch (Exception ex)
             {

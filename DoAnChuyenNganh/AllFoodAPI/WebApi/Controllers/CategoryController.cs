@@ -73,6 +73,15 @@ namespace AllFoodAPI.WebApi.Controllers
                 var result = await _service.DeleteCategory(id);
                 return result ? Ok(new { success = true, message = "Xóa thành công" }) : StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Thêm thất bại" });
             }
+            catch(DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message,
+                });
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);

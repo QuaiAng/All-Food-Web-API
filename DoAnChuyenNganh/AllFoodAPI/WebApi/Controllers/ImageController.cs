@@ -59,7 +59,16 @@ namespace AllFoodAPI.WebApi.Controllers
                 var result = await _service.AddImage(image);
                 return result ? Ok(new { success = true, message = "Thêm thành công" }) : StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Thêm thất bại" });
             }
-            catch(Exception ex) {
+            catch(DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message,   
+                });
+            }
+            catch (Exception ex) {
                 throw new Exception(ex.Message);
             }
 

@@ -96,9 +96,11 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
         public async Task<bool> ShopHasProductName(string productName, int shopId, int productId = 0)
         {
-            if(productId == 0) 
-                return await _context.Products.AnyAsync(u => u.ProductName == productName && u.ShopId == shopId);
-            return await _context.Products.AnyAsync(u => u.ProductName == productName && u.ShopId == shopId && u.ProductId != productId);
+            //Check khi thêm product
+            if (productId == 0) 
+                return await _context.Products.AnyAsync(u => u.ProductName == productName && u.ShopId == shopId && u.Status == true);
+            //Check khi update product
+            return await _context.Products.AnyAsync(u => u.ProductName == productName && u.ShopId == shopId && u.ProductId != productId && u.Status == true);
         }
 
         public async Task<bool> UpdateProduct(Product product)

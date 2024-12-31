@@ -1,7 +1,10 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
+using AllFoodAPI.Core.Interfaces.IRepositories;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IService;
+using AllFoodAPI.Infrastructure.Repositories;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 
@@ -10,15 +13,19 @@ namespace AllFoodAPI.Application.Service
     public class ImageService : IImageService
     {
         private readonly IImageRepository _repository;
+        private readonly IProductRepository _productRepository;
 
-        public ImageService(IImageRepository repository)
+        public ImageService(IImageRepository repository, IProductRepository productRepository)
         {
             _repository = repository;
+            _productRepository = productRepository;
         }
         public async Task<bool> AddImage(ImageDTO image)
         {
             try
             {
+                if (await _productRepository.GetProductById(image.ProductId) == null)
+                    throw new DuplicateException("ProductID", $"Không tồn tại sản phẩm có ID {image.ProductId}");
                 return await _repository.AddImage(ImageDTO.ToEntity(image));
             }
             catch 
