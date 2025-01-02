@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.WebApi.Models.Review;
 
 namespace AllFoodAPI.Core.Interfaces.IServices
@@ -10,5 +11,7 @@ namespace AllFoodAPI.Core.Interfaces.IServices
         Task<bool> AddReview(AddReviewModel review);
         Task<bool> UpdateReview(UpdateReviewModel review, int id);
         Task<bool> DeleteReview(int id);
+        Task<IEnumerable<ReviewDTO>> GetReviewByProductId(int productId);
+
     }
 }

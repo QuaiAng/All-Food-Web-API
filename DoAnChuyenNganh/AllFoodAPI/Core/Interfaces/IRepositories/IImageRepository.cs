@@ -10,5 +10,6 @@ namespace AllFoodAPI.Core.Interfaces.IRepository
         Task <bool> AddImage(Entities.Image image);
         Task<bool> DeleteImage(int id);
         Task<bool> UpdateImage(Entities.Image image);
+        Task<IEnumerable<Entities.Image>> GetImageByProductId(int productId);
     }
 }

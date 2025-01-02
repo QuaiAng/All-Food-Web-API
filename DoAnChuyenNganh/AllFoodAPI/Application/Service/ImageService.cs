@@ -7,6 +7,7 @@ using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Infrastructure.Repositories;
 using System.Diagnostics.Metrics;
 using System.Drawing;
+using System.Runtime.Intrinsics.X86;
 
 namespace AllFoodAPI.Application.Service
 {
@@ -64,9 +65,23 @@ namespace AllFoodAPI.Application.Service
         {
             try
             {
-                var imageDTO = await _repository.GetImageById(id);
-                if (imageDTO == null) return null;
-                return ImageDTO.FromEntity(imageDTO);
+                var image = await _repository.GetImageById(id);
+                if (image == null) return null;
+                return ImageDTO.FromEntity(image);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<ImageDTO?>> GetImageByProductId(int productId)
+        {
+            try
+            {
+                var images = await _repository.GetImageByProductId(productId);
+                var imageDTOs = images.Select(u => ImageDTO.FromEntity(u));
+                return imageDTOs;
             }
             catch
             {

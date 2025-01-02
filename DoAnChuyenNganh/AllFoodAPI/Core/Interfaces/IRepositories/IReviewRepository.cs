@@ -11,5 +11,6 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
         Task<bool> AddReview(Review review);
         Task<bool> UpdateReview(Review review);
         Task<bool> DeleteReview(int id);
+        Task<IEnumerable<Review>> GetReviewByProductId(int productId);
     }
 }

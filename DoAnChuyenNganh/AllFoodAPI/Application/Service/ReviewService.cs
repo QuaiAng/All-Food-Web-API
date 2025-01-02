@@ -90,6 +90,20 @@ namespace AllFoodAPI.Application.Service
         }
     }
 
+        public async Task<IEnumerable<ReviewDTO>> GetReviewByProductId(int productId)
+        {
+            try
+            {
+                var reviews = await _reviewRepository.GetReviewByProductId(productId);
+                var reviewDTOs = reviews.Select(u => ReviewDTO.FromEntity(u));
+                return reviewDTOs;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public async Task<bool> UpdateReview(UpdateReviewModel review, int id)
         {
             try

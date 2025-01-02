@@ -7,6 +7,7 @@ namespace AllFoodAPI.Core.Interfaces.IServices
     public interface IProductService
     {
         Task<IEnumerable<ProductDTO>> GetAllProducts();
+        Task<IEnumerable<ProductDTO>> GetProductByCategoryId(int categoryId);
         Task<ProductDTO?> GetProductById(int id);
         Task<bool> AddProduct(AddProductModel AddProduct);
         Task<bool> UpdateProduct(UpdateProductModel UpdateProduct, int productId, int shopId);

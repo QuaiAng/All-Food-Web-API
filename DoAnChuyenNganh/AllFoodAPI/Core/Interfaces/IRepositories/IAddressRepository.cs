@@ -1,4 +1,5 @@
-﻿using AllFoodAPI.Core.Entities;
+﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 
 namespace AllFoodAPI.Core.Interfaces.IRepository
 {
@@ -10,5 +11,7 @@ namespace AllFoodAPI.Core.Interfaces.IRepository
         Task<bool> UpdateAddress(Address adress);
         Task<bool> DeleteAddress(int id);
         Task<bool> IsAddressExist(string address, int userID);
+        Task<IEnumerable<Address>> GetAddressByUserId(int userId);
+
     }
 }

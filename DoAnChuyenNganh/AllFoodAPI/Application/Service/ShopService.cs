@@ -91,6 +91,26 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<ShopDTO?> GetShopByUserId(int userId)
+        {
+            try
+            {
+                var shop = await _repository.GetShopByUserId(userId);
+                if (shop == null)
+                {
+                    return null;
+                }
+                var shopDTO = ShopDTO.FromEntity(shop);
+                return shopDTO;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
         public async Task<bool> UpdateShop(UpdateShopModel shopModel, int id)
         {
             try

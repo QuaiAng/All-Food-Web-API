@@ -9,5 +9,6 @@ namespace AllFoodAPI.Core.Interfaces.IService
         Task<bool> UpdateAddress(int id, string address);
         Task<bool> DeleteAddress(int id);
         Task<bool> IsAddressExist(string address, int userID);
+        Task<IEnumerable<AddressDTO>> GetAddressByUserId(int userId);
     }
 }

@@ -32,13 +32,30 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("{id:int}")]
+        [HttpGet("imageId={id:int}")]
         public async Task<ActionResult<Core.Entities.Image>> GetImageById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
             try
             {
                 var image = await _service.GetImageById(id);
+                if (image == null) return NotFound(new { success = false, message = "Không tìm thấy hình ảnh" });
+                return Ok(image);
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
+        
+        [HttpGet("productId={id:int}")]
+        public async Task<ActionResult<Core.Entities.Image>> GetImageByProductId(int productId)
+        {
+            if (productId == 0) return BadRequest(new { success = false, message = "Product ID không hợp lệ" });
+            try
+            {
+                var image = await _service.GetImageByProductId(productId);
                 if (image == null) return NotFound(new { success = false, message = "Không tìm thấy hình ảnh" });
                 return Ok(image);
             }

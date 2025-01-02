@@ -15,8 +15,6 @@ public partial class OrderDetail
 
     public int Total { get; set; }
 
-    public int OrderStatus { get; set; }
-
     public string? Note { get; set; }
 
     public virtual Order Order { get; set; } = null!;

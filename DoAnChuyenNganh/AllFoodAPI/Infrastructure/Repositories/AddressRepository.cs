@@ -69,6 +69,19 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Address>> GetAddressByUserId(int userId)
+        {
+            try
+            {
+                var addresses = await _context.Addresses.Where(u => u.UserId == userId).ToListAsync();
+                return addresses;
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<IEnumerable<Address>> GetAllAddresses()
         {
             try

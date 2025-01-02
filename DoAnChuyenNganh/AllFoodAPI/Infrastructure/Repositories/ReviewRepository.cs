@@ -75,6 +75,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Review>> GetReviewByProductId(int productId)
+        {
+            try
+            {
+                var reviews = await _context.Reviews.Where(u => u.Status == true && u.ProductId == productId).ToListAsync();
+                return reviews;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
         public async Task<bool> UpdateReview(Review review)
         {
             try

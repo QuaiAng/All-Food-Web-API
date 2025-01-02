@@ -60,6 +60,7 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
+
         [Route("login")]
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginModel loginDTO)

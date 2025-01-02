@@ -47,6 +47,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
             {
                 var users = await _context.Users
                               .Where(u => u.Status == true)
+                              .Include(u => u.Addresses)
                               .ToListAsync();
 
                 return users;

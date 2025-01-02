@@ -34,13 +34,32 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("reviewId={id:int}")]
         public async Task<ActionResult<ReviewDTO>> GetReviewById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
             try
             {
                 var review = await _service.GetReviewById(id);
+                if (review == null) return NotFound(new { success = false, message = "Không tìm thấy review này" });
+                return Ok(review);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Đã xảy ra lỗi" });
+            }
+        }
+        
+        
+        [HttpGet("productId={id:int}")]
+        public async Task<ActionResult<ReviewDTO>> GetReviewByProductId(int productId)
+        {
+            if (productId == 0) return BadRequest(new { success = false, message = "Product ID không hợp lệ." });
+            try
+            {
+                var review = await _service.GetReviewByProductId(productId);
                 if (review == null) return NotFound(new { success = false, message = "Không tìm thấy review này" });
                 return Ok(review);
             }

@@ -12,6 +12,7 @@ namespace AllFoodAPI.Core.Interfaces.IService
         Task<bool> UpdateShop(UpdateShopModel shopModel, int id);
         Task<bool> DeleteShop(int shopId);
         Task<bool> UserHasShop(int UserId);
+        Task<ShopDTO?> GetShopByUserId(int userId);
 
     }
 }

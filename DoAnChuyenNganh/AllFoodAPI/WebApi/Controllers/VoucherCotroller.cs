@@ -33,13 +33,32 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("voucherId={id:int}")]
         public async Task<ActionResult<VoucherDTO>> GetVoucherById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
             try
             {
                 var shop = await _service.GetVoucherById(id);
+                if (shop == null) return NotFound(new { success = false, message = "Không tìm thấy voucher này" });
+                return Ok(shop);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Đã xảy ra lỗi" });
+            }
+        }
+        
+        
+        [HttpGet("shopId={id:int}")]
+        public async Task<ActionResult<VoucherDTO>> GetVoucherByShopId(int shopId)
+        {
+            if (shopId == 0) return BadRequest(new { success = false, message = "Shop ID không hợp lệ." });
+            try
+            {
+                var shop = await _service.GetVoucherByShopId(shopId);
                 if (shop == null) return NotFound(new { success = false, message = "Không tìm thấy voucher này" });
                 return Ok(shop);
             }

@@ -2,7 +2,11 @@
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
+using System;
+using System.Diagnostics.Metrics;
 using System.Drawing;
+using System.Runtime.Intrinsics.X86;
 
 namespace AllFoodAPI.Infrastructure.Repositories
 {
@@ -60,15 +64,31 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
-        public Task<Core.Entities.Image?> GetImageById(int id)
+        public async Task<Core.Entities.Image?> GetImageById(int id)
         {
             try
             {
-                var image = _context.Images.SingleOrDefaultAsync(u => u.ImageId == id);
-                if (image == null) return null;
-                return image;
+                var image = await _context.Images.SingleOrDefaultAsync(u => u.ImageId == id);
+                return image ?? null;
             }
             catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+        
+        
+
+        public async Task<IEnumerable<Core.Entities.Image>> GetImageByProductId(int productId)
+        {
+            try
+            {
+                var images = await _context.Images.Where(u => u.ProductId == productId).ToListAsync();
+                return images;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
 

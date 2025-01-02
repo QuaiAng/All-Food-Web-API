@@ -2,6 +2,7 @@
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 using System.Net;
 
 namespace AllFoodAPI.Infrastructure.Repositories
@@ -70,6 +71,19 @@ namespace AllFoodAPI.Infrastructure.Repositories
                 return shop;
             }
             catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<Shop?> GetShopByUserId(int userId)
+        {
+            try
+            {
+                var shop = await _context.Shops.SingleOrDefaultAsync(u => u.UserId == userId);
+                return shop == null ? null : shop;
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

@@ -32,13 +32,32 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
-        [HttpGet("{shopId:int}")]
+        [HttpGet("shopId={shopId:int}")]
         public async Task<ActionResult<AddressDTO>> GetShopById(int shopId)
         {
             if (shopId == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
             try
             {
                 var shop = await _service.GetShopById(shopId);
+                if (shop == null) return NotFound(new { success = false, message = "Không tìm thấy shop này" });
+                return Ok(shop);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Đã xảy ra lỗi" });
+            }
+        }
+
+
+        [HttpGet("userId={userId:int}")]
+        public async Task<ActionResult<AddressDTO>> GetShopByUserId(int userId)
+        {
+            if (userId == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ." });
+            try
+            {
+                var shop = await _service.GetShopByUserId(userId);
                 if (shop == null) return NotFound(new { success = false, message = "Không tìm thấy shop này" });
                 return Ok(shop);
             }

@@ -75,6 +75,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Voucher>> GetVoucherByShopId(int shopId)
+        {
+            try
+            {
+                var vouchers = await _context.Vouchers.Where(u => u.Status == true && u.ShopId == shopId).ToListAsync();
+                return vouchers;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
         public async Task<bool> UpdateVoucher(Voucher voucher)
         {
             try

@@ -72,6 +72,25 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<AddressDTO>> GetAddressByUserId(int userId)
+        {
+            try
+            {
+                var addresses = await _repository.GetAddressByUserId(userId);
+                var addressDTOs = addresses.Select(u => AddressDTO.FromEntity(u));
+
+                return addressDTOs;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+
+            }
+        }
+
         public async Task<IEnumerable<AddressDTO>> GetAllAddresses()
         {
 

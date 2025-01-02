@@ -10,5 +10,6 @@ namespace AllFoodAPI.Core.Interfaces.IRepository
         Task<bool> UpdateShop(Shop shop);
         Task<bool> DeleteShop(int shopId);
         Task<bool> UserHasShop(int UserId);
+        Task<Shop?> GetShopByUserId(int userId);
     }
 }

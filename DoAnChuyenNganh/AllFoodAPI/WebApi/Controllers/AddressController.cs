@@ -36,7 +36,7 @@ namespace AllFoodAPI.WebApi.Controllers
             }
 
         }
-        [HttpGet("{id:int}")]
+        [HttpGet("addressId={id:int}")]
         public async Task<ActionResult<AddressDTO>> GetAddressById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
@@ -44,6 +44,24 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var address = await _service.GetAddressById(id);
                 if (address == null) return NotFound(new { success = false, message = "Không tìm thấy địa chỉ này" });
+                return Ok(address);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = "Đã xảy ra lỗi" });
+            }
+        }
+
+        [HttpGet("userId={id:int}")]
+        public async Task<ActionResult<AddressDTO>> GetAddressByUserId(int id)
+        {
+            if (id == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ." });
+            try
+            {
+                var address = await _service.GetAddressByUserId(id);
+                if (address == null) return NotFound(new { success = false, message = "Không tìm thấy địa chỉ" });
                 return Ok(address);
             }
             catch (Exception ex)

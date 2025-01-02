@@ -87,6 +87,20 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<VoucherDTO>> GetVoucherByShopId(int shopId)
+        {
+            try
+            {
+                var vouchers = await _repository.GetVoucherByShopId(shopId);
+                var voucherDTOs = vouchers.Select(u => VoucherDTO.FromEntity(u));
+                return voucherDTOs;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public async Task<bool> UpdateVoucher(UpdateVoucherModel voucher, int id)
         {
             try

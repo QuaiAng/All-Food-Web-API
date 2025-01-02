@@ -51,7 +51,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                return await _context.Products.ToListAsync();
+                return await _context.Products.Where(u => u.Status == true).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
+        public async Task<IEnumerable<Product>> GetProductByCategoryId(int categoryId)
+        {
+            try
+            {
+                return await _context.Products.Where(u => u.CategoryId == categoryId && u.Status == true).ToListAsync();
             }
             catch (Exception ex)
             {

@@ -211,6 +211,9 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.DeliveryAddress)
                 .HasColumnType("text")
                 .HasColumnName("delivery_address");
+            entity.Property(e => e.OrderStatus)
+                .HasColumnType("int(11)")
+                .HasColumnName("order_status");
             entity.Property(e => e.PaymentMethod)
                 .HasColumnType("text")
                 .HasColumnName("payment_method");
@@ -259,9 +262,6 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Note)
                 .HasColumnType("text")
                 .HasColumnName("note");
-            entity.Property(e => e.OrderStatus)
-                .HasColumnType("int(11)")
-                .HasColumnName("order_status");
             entity.Property(e => e.Price)
                 .HasColumnType("int(11)")
                 .HasColumnName("price");

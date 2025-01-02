@@ -31,13 +31,29 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("{id:int}")]
+        [HttpGet("productId={id:int}")]
         public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "ID không hợp lệ" });
             try
             {
                 var product = await _service.GetProductById(id);
+                if (product == null) return NotFound(new { success = false, message = "Không tìm thấy sản phẩm" });
+                return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpGet("categoryId={id:int}")]
+        public async Task<ActionResult<ProductDTO>> GetProductByCategoryId(int categoryId)
+        {
+            if (categoryId == 0) return BadRequest(new { success = false, message = "Category ID không hợp lệ" });
+            try
+            {
+                var product = await _service.GetProductByCategoryId(categoryId);
                 if (product == null) return NotFound(new { success = false, message = "Không tìm thấy sản phẩm" });
                 return Ok(product);
             }

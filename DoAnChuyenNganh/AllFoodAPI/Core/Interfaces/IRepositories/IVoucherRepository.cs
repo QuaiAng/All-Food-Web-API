@@ -7,6 +7,7 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
     public interface IVoucherRepository
     {
         Task<IEnumerable<Voucher>> GetAllVouchers();
+        Task<IEnumerable<Voucher>> GetVoucherByShopId(int shopId);
         Task<Voucher?> GetVoucherById(int id);
         Task<bool> AddVoucher(Voucher voucher);
         Task<bool> UpdateVoucher(Voucher voucher);

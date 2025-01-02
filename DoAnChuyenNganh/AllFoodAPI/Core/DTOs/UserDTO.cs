@@ -18,7 +18,7 @@ namespace AllFoodAPI.Core.DTOs
 
         public string ImageUrl { get; set; } = null!;
 
-
+        
 
         public UserDTO()
         {
@@ -48,6 +48,7 @@ namespace AllFoodAPI.Core.DTOs
                 FullName = user.FullName.Trim(),
                 Email = user.Email.Trim(),
                 Username = user.Username,
+                
             };
         }
 
