@@ -40,14 +40,14 @@ namespace AllFoodAPI.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<UserDTO>> GetUserById(int id)
         {
-            if (id == 0) return BadRequest();
+            if (id == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ" });
             try
             {
                 var user = await _service.GetUserById(id);
                 if (user == null)
                 {
 
-                    return NotFound();
+                    return NotFound(new { success = false, message = "Không tìm thấy user" });
 
                 }
                 return Ok(user);

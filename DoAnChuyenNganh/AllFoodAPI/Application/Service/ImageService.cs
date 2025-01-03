@@ -39,6 +39,8 @@ namespace AllFoodAPI.Application.Service
         {
             try
             {
+                if (await _repository.GetImageById(id) == null)
+                    throw new DuplicateException("Image", "Không tồn tại hình ảnh");
                 return await _repository.DeleteImage(id);
             }
             catch
