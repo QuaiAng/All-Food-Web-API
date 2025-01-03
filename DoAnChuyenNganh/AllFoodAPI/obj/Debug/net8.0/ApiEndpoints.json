@@ -115,6 +115,22 @@
     ]
   },
   {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CartController",
+    "Method": "GetCartByUserId",
+    "RelativePath": "api/cart/userId={userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
     "Method": "GetAllCategories",
     "RelativePath": "api/category",
@@ -544,8 +560,71 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
+    "Method": "AddReview",
+    "RelativePath": "api/review/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review",
+        "Type": "AllFoodAPI.WebApi.Models.Review.AddReviewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
+    "Method": "GetReviewByProductId",
+    "RelativePath": "api/review/productId={id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.ReviewDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/review/remove/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
     "Method": "GetReviewById",
-    "RelativePath": "api/review/{id}",
+    "RelativePath": "api/review/reviewId={id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -567,38 +646,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
-    "Method": "AddReview",
-    "RelativePath": "api/review/add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "review",
-        "Type": "AllFoodAPI.WebApi.Models.Review.AddReviewModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
-    "Method": "DeleteReview",
-    "RelativePath": "api/review/remove/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ReviewController",
