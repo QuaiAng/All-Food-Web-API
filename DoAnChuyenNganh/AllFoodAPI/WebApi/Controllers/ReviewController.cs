@@ -26,7 +26,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var reviews = await _service.GetAllReviews();
-                return Ok(reviews);
+                return Ok(new { success = true, data = reviews });
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var review = await _service.GetReviewById(id);
                 if (review == null) return NotFound(new { success = false, message = "Không tìm thấy review này" });
-                return Ok(review);
+                return Ok(new { success = true, data = review });
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var review = await _service.GetReviewByProductId(productId);
                 if (review == null) return NotFound(new { success = false, message = "Không tìm thấy review này" });
-                return Ok(review);
+                return Ok(new { success = true, data = review });
             }
             catch (Exception ex)
             {

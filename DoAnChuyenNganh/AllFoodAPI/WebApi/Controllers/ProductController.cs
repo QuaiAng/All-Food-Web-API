@@ -24,7 +24,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var result = await _service.GetAllProducts();
-                return Ok(result);
+                return Ok(new { success = true, data = result });
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var product = await _service.GetProductById(id);
                 if (product == null) return NotFound(new { success = false, message = "Không tìm thấy sản phẩm" });
-                return Ok(product);
+                return Ok(new { success = true, data = product });
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var product = await _service.GetProductByCategoryId(categoryId);
                 if (product == null) return NotFound(new { success = false, message = "Không tìm thấy sản phẩm" });
-                return Ok(product);
+                return Ok(new { success = true, data = product });
             }
             catch (Exception ex)
             {

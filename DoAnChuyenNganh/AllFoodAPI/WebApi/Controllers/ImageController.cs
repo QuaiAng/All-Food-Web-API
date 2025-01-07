@@ -25,7 +25,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var result = await _service.GetAllImages();
-                return Ok(result);
+                return Ok(new { success = true, data = result });
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var image = await _service.GetImageById(id);
                 if (image == null) return NotFound(new { success = false, message = "Không tìm thấy hình ảnh" });
-                return Ok(image);
+                return Ok(new { success = true, data = image });
             }
             catch (Exception ex) 
             {
@@ -57,7 +57,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var image = await _service.GetImageByProductId(productId);
                 if (image == null) return NotFound(new { success = false, message = "Không tìm thấy hình ảnh" });
-                return Ok(image);
+                return Ok(new { success = true, data = image });
             }
             catch (Exception ex) 
             {

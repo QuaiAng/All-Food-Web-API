@@ -131,6 +131,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CartDetailController",
+    "Method": "AddCartDetail",
+    "RelativePath": "api/cartdetail/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartDetailDTO",
+        "Type": "AllFoodAPI.Core.DTOs.CartDetailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CartDetailController",
+    "Method": "UpdateCartDetail",
+    "RelativePath": "api/cartdetail/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "quantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
     "Method": "GetAllCategories",
     "RelativePath": "api/category",

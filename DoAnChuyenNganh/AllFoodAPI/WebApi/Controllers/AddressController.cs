@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IService;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var addresses = await _service.GetAllAddresses();
-                return Ok(addresses);
+                return Ok(new { success = true, data = addresses });
             }
             catch (Exception ex)
             {
@@ -44,7 +45,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var address = await _service.GetAddressById(id);
                 if (address == null) return NotFound(new { success = false, message = "Không tìm thấy địa chỉ này" });
-                return Ok(address);
+                return Ok(new { success = true, data = address });
             }
             catch (Exception ex)
             {
@@ -62,7 +63,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var address = await _service.GetAddressByUserId(id);
                 if (address == null) return NotFound(new { success = false, message = "Không tìm thấy địa chỉ" });
-                return Ok(address);
+                return Ok(new { success = true, value = address });
             }
             catch (Exception ex)
             {

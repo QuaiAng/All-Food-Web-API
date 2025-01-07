@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IServices;
 using AllFoodAPI.WebApi.Models.Report;
@@ -26,7 +27,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var reports = await _service.GetAllReports();
-                return Ok(reports);
+                return Ok(new { success = true, data = reports });
             }
             catch (Exception ex)
             {
@@ -42,7 +43,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var report = await _service.GetReportById(id);
                 if (report == null) return NotFound(new { success = false, message = "Không tìm thấy report này" });
-                return Ok(report);
+                return Ok(new { success = true, data = report });
             }
             catch (Exception ex)
             {

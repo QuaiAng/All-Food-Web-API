@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IService;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var result = await _service.GetAllCategories();
-                return Ok(result);
+                return Ok(new { success = true, data = result });
             }
             catch (Exception ex)
             {
@@ -38,7 +39,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var category = await _service.GetCategoryById(id);
                 if (category == null) return NotFound(new { success = false, message = "Không tìm thấy loại" });
-                return Ok(category);
+                return Ok(new { success = true, data = category });
             }
             catch (Exception ex)
             {

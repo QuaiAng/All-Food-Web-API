@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Shared.Helpers;
@@ -25,7 +26,7 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var users = await _service.GetAllUsers();
-                return Ok(users);
+                return Ok(new { success = true, data = users });
             }
             catch (Exception ex)
             {
@@ -50,8 +51,9 @@ namespace AllFoodAPI.WebApi.Controllers
                     return NotFound(new { success = false, message = "Không tìm thấy user" });
 
                 }
-                return Ok(user);
+                return Ok(new { success = true, data = user });
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
