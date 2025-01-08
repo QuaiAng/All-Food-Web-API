@@ -123,6 +123,23 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<ProductDTO>> GetProductsByName(string name)
+        {
+            try
+            {
+                var products = await _repository.GetProductsByName(name);
+                var productDTOs = products.Select(u => ProductDTO.FromEntity(u));
+
+                return productDTOs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw;
+            }
+        }
+
         public Task<bool> IsCategoryExist(int categoryId)
         {
             return _repository.IsCategoryExist(categoryId);

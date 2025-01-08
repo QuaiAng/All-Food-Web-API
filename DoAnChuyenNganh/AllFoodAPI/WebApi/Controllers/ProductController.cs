@@ -62,6 +62,21 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        [HttpGet("name={name}")]
+        public async Task<ActionResult<ProductDTO>> GetProductByName(string name="")
+        {
+            if (string.IsNullOrEmpty(name)) return BadRequest(new { success = false, message = "Tên không hợp lệ" });
+            try
+            {
+                var product = await _service.GetProductsByName(name);
+                if (product == null) return NotFound(new { success = false, message = "Không tìm thấy sản phẩm" });
+                return Ok(new { success = true, data = product });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         [HttpPost("add")]
         public async Task<IActionResult> AddCategory([FromBody] AddProductModel product)

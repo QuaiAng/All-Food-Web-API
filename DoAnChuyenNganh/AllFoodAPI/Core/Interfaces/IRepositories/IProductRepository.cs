@@ -13,6 +13,6 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
         Task<bool> ShopHasProductName(string productName, int shopId, int productId = 0);
         Task<bool> IsShopExist(int shopId);
         Task<bool> IsCategoryExist(int categoryId);
-        
+        Task<IEnumerable<Product>> GetProductsByName(string name);
     }
 }

@@ -63,7 +63,7 @@ namespace AllFoodAPI.WebApi.Controllers
             {
                 var address = await _service.GetAddressByUserId(id);
                 if (address == null) return NotFound(new { success = false, message = "Không tìm thấy địa chỉ" });
-                return Ok(new { success = true, value = address });
+                return Ok(new { success = true, data = address });
             }
             catch (Exception ex)
             {

@@ -97,6 +97,26 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Product>> GetProductsByName(string name)
+        {
+
+            try
+            {
+                var products = await _context.Products.Where(u => u.ProductName.ToLower().Contains(name.ToLower())).ToListAsync();
+
+               
+
+                return products;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
         public async Task<bool> IsCategoryExist(int categoryId)
         {
             return await _context.Categories.AnyAsync(c => c.CategoryId == categoryId);

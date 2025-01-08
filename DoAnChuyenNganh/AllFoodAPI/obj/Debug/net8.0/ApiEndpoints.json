@@ -430,6 +430,32 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "GetProductByName",
+    "RelativePath": "api/product/name={name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.ProductDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
     "Method": "GetProductById",
     "RelativePath": "api/product/productId={id}",
     "HttpMethod": "GET",
