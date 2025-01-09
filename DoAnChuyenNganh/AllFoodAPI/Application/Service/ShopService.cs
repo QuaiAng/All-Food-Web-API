@@ -111,6 +111,17 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<ShopDTO>> GetNHighestShops(int n)
+        {
+            try
+            {
+                var shops = await _repository.GetNHighestShops(n);
+                var shopDTOs = shops.Select(u => ShopDTO.FromEntity(u));
+                return shopDTOs;
+            }
+            catch { throw; }
+        }
+
         public async Task<bool> UpdateShop(UpdateShopModel shopModel, int id)
         {
             try

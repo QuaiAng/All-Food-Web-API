@@ -89,6 +89,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Shop>> GetNHighestShops(int n)
+        {
+            try
+            {
+                var shops = await _context.Shops.OrderByDescending(u => u.Rating).Take(n).ToListAsync();
+                return shops;
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
         public async Task<bool> UpdateShop(Shop shop)
         {
             try

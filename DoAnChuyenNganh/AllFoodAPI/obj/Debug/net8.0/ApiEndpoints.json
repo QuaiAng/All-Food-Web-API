@@ -759,6 +759,22 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
+    "Method": "GetNHighestShops",
+    "RelativePath": "api/shop/Get{n}HighestShops",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ShopController",
     "Method": "DeleteShop",
     "RelativePath": "api/shop/remove/{shopId}",
     "HttpMethod": "DELETE",

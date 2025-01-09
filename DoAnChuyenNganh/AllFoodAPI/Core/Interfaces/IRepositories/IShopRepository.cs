@@ -1,4 +1,5 @@
-﻿using AllFoodAPI.Core.Entities;
+﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 
 namespace AllFoodAPI.Core.Interfaces.IRepository
 {
@@ -11,5 +12,7 @@ namespace AllFoodAPI.Core.Interfaces.IRepository
         Task<bool> DeleteShop(int shopId);
         Task<bool> UserHasShop(int UserId);
         Task<Shop?> GetShopByUserId(int userId);
+        Task<IEnumerable<Shop>> GetNHighestShops(int n);
+
     }
 }

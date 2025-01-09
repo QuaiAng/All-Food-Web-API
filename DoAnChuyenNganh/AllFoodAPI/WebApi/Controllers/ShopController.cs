@@ -4,6 +4,7 @@ using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.WebApi.Models.Shop;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.Metrics;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace AllFoodAPI.WebApi.Controllers
@@ -24,6 +25,21 @@ namespace AllFoodAPI.WebApi.Controllers
             try
             {
                 var shops = await _service.GetAllShops();
+                return Ok(new { success = true, data = shops });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpGet("Get{n:int}HighestShops")]
+        public async Task<IActionResult> GetNHighestShops(int n)
+        {
+            if (n < 1) return BadRequest(new { success = false, message = "Số dòng dữ liệu không hợp lệ" });
+            try
+            {
+                var shops = await _service.GetNHighestShops(n);
                 return Ok(new { success = true, data = shops });
             }
             catch (Exception ex)

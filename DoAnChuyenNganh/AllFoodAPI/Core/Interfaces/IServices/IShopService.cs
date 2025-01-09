@@ -13,6 +13,6 @@ namespace AllFoodAPI.Core.Interfaces.IService
         Task<bool> DeleteShop(int shopId);
         Task<bool> UserHasShop(int UserId);
         Task<ShopDTO?> GetShopByUserId(int userId);
-
+        Task<IEnumerable<ShopDTO>> GetNHighestShops(int n);
     }
 }
