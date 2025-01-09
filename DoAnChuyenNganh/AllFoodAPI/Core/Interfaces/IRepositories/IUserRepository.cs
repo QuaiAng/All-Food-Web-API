@@ -1,4 +1,5 @@
 ﻿using AllFoodAPI.Core.Entities;
+using AllFoodAPI.WebApi.Models.User;
 
 namespace AllFoodAPI.Core.Interfaces.IRepository
 {
@@ -13,5 +14,7 @@ namespace AllFoodAPI.Core.Interfaces.IRepository
         Task<bool> IsUserNameExist(string username);
         Task<bool> IsEmailExist(string username);
         Task<bool> IsPhoneExist(string username);
+        Task<bool> ChangePassword(User changePassword);
+
     }
 }

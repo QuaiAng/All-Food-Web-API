@@ -15,5 +15,6 @@ namespace AllFoodAPI.Core.Interfaces.IService
         Task<bool> IsUserNameExist(string username);
         Task<bool> IsEmailExist(string email);
         Task<bool> IsPhoneExist(string phone);
+        Task<bool> ChangePassword(ChangePasswordModel changePassword, int id);
     }
 }

@@ -900,6 +900,27 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/user/changepassword/userId={id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "AllFoodAPI.WebApi.Models.User.ChangePasswordModel",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/user/login",
     "HttpMethod": "POST",

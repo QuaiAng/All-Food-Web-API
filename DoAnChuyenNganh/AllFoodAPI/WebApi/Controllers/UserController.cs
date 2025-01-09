@@ -5,6 +5,7 @@ using AllFoodAPI.Core.Interfaces.IService;
 using AllFoodAPI.Shared.Helpers;
 using AllFoodAPI.WebApi.Models.User;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
 
 namespace AllFoodAPI.WebApi.Controllers
 {
@@ -37,8 +38,7 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
 
-        [Route("{id:int}")]
-        [HttpGet]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<UserDTO>> GetUserById(int id)
         {
             if (id == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ" });
@@ -63,8 +63,7 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
 
-        [Route("login")]
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel loginDTO)
         {
             try
@@ -88,8 +87,7 @@ namespace AllFoodAPI.WebApi.Controllers
 
 
         //Hàm thêm mới 1 user
-        [Route("add")]
-        [HttpPost]
+        [HttpPost("add")]
         public async Task<IActionResult> AddUser([FromBody] AddUserModel user)
         {
 
@@ -134,8 +132,7 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
         //Hàm xóa 1 user khỏi CSDL
-        [Route("remove/{id:int}")]
-        [HttpDelete]
+        [HttpDelete("remove/{id:int}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             try
@@ -160,9 +157,37 @@ namespace AllFoodAPI.WebApi.Controllers
 
         }
 
+        //Hàm cập nhật mật khẩu
+        [HttpPatch("changepassword/userId={id:int}")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model, int id)
+        {
+            try
+            {
+                var result = await _service.ChangePassword(model, id);
+                return Ok(new { success = true, message = "Cập nhật mật khẩu thành công" });
+            }
+            catch (DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message
+                });
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    success = false,
+                    message = ex.Message
+                });
+            }
+        }
+
+
         //Hàm sửa 1 user 
-        [Route("update/{id:int}")]
-        [HttpPut]
+        [HttpPut("update/{id:int}")]
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserModel userUpdate, int id)
         {
 

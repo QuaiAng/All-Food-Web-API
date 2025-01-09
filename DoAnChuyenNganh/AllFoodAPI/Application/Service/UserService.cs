@@ -55,6 +55,30 @@ namespace AllFoodAPI.Application.Service
 
         }
 
+        public async Task<bool> ChangePassword(ChangePasswordModel changePassword, int id)
+        {
+            try
+            {
+                var user = await _userRepository.GetUserById(id);
+                if (user == null)
+                    throw new DuplicateException("User", "User not found");
+
+                if (user.Password != changePassword.OldPassword)
+                {
+                    throw new DuplicateException("Password", "Mật khẩu hiện tại không đúng");
+                }
+
+                var hashedPassword = PasswordHasher.HashPassword(changePassword.NewPassword, user.Salt);
+                user.Password = hashedPassword;
+
+                return await _userRepository.ChangePassword(user);
+            }
+            catch
+            {
+                throw; // Throw lại exception để Controller xử lý
+            }
+        }
+
         public async Task<bool> DeleteUser(int id)
         {
 

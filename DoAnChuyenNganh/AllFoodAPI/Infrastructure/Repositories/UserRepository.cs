@@ -155,5 +155,24 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
         }
 
+        public async Task<bool> ChangePassword(User changePassword)
+        {
+            try
+            {
+                var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == changePassword.UserId);
+                if (user == null)
+                {
+                    return false;
+                }
+
+                _context.Users.Update(user);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
     }
 }
