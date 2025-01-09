@@ -226,15 +226,12 @@ namespace AllFoodAPI.Application.Service
                         throw new DuplicateException("Phone", "Số điện thoại đã tồn tại");
                 }
 
-                var hashedPassword = PasswordHasher.HashPassword(userUpdate.Password, user.Salt);
-                userUpdate.Password = hashedPassword;
 
                 if (user != null)
                 {
                     user.Email = userUpdate.Email;
                     user.FullName = userUpdate.FullName;
                     user.ImageUrl = userUpdate.ImageUrl;
-                    user.Password = userUpdate.Password;
                     user.Phone = userUpdate.Phone;
                 }
 

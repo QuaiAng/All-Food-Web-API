@@ -195,7 +195,6 @@ namespace AllFoodAPI.WebApi.Controllers
 
             if (string.IsNullOrEmpty(userUpdate.FullName)
                   || string.IsNullOrEmpty(userUpdate.Email)
-                  || string.IsNullOrEmpty(userUpdate.Password)
                   || string.IsNullOrEmpty(userUpdate.Phone))
             {
 
