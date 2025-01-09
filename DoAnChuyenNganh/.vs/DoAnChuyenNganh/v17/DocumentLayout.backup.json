@@ -190,8 +190,7 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
               "ViewState": "AgIAAJsAAAAAAAAAAAAswKEAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:44:54.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:44:54.799Z"
             },
             {
               "$type": "Document",
@@ -203,8 +202,7 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\ReviewRepository.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:42:22.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:42:22.334Z"
             },
             {
               "$type": "Document",
@@ -216,8 +214,7 @@
               "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IUserRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAIA+wBAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:42:00.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:42:00.605Z"
             },
             {
               "$type": "Document",
@@ -229,8 +226,7 @@
               "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IServices\\IUserService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAvwBEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:41:16.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:41:16.941Z"
             },
             {
               "$type": "Document",
@@ -242,8 +238,7 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Models\\User\\ChangePasswordModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:39:26.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:39:26.351Z"
             },
             {
               "$type": "Document",
@@ -253,7 +248,7 @@
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\UserService.cs",
               "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
               "RelativeToolTip": "AllFoodAPI\\Application\\Service\\UserService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAQwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAwEEAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T03:22:30.352Z",
               "EditorCaption": ""
@@ -268,8 +263,7 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\UserController.cs",
               "ViewState": "AgIAAJgAAAAAAAAAAAAswKUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T03:21:55.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T03:21:55.222Z"
             },
             {
               "$type": "Document",
@@ -281,8 +275,7 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\ReviewController.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAowD8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T03:02:08.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T03:02:08.185Z"
             },
             {
               "$type": "Document",
@@ -294,8 +287,7 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Models\\User\\AddUserModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:39:31.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T05:39:31.332Z"
             },
             {
               "$type": "Document",
@@ -307,8 +299,7 @@
               "RelativeToolTip": "AllFoodAPI\\Core\\Entities\\Shop.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAmwB0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:03:06.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T15:03:06.892Z"
             },
             {
               "$type": "Document",

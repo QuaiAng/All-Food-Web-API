@@ -63,7 +63,8 @@ namespace AllFoodAPI.Application.Service
                 if (user == null)
                     throw new DuplicateException("User", "User not found");
 
-                if (user.Password != changePassword.OldPassword)
+                var hashedOldPassword = PasswordHasher.HashPassword(changePassword.OldPassword, user.Salt);
+                if (user.Password != hashedOldPassword)
                 {
                     throw new DuplicateException("Password", "Mật khẩu hiện tại không đúng");
                 }
