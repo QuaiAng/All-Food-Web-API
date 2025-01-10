@@ -14,5 +14,6 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
         Task<bool> IsShopExist(int shopId);
         Task<bool> IsCategoryExist(int categoryId);
         Task<IEnumerable<Product>> GetProductsByName(string name);
+        
     }
 }

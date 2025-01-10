@@ -102,10 +102,9 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
             try
             {
-                var products = await _context.Products.Where(u => u.ProductName.ToLower().Contains(name.ToLower())).ToListAsync();
+                var products = await _context.Products.Where(u => u.ProductName.ToLower().Contains(name.ToLower())).Include(p => p.Shop).ToListAsync();
 
-               
-
+                
                 return products;
 
             }

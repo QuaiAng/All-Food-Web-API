@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:35784",
+      "applicationUrl": "http://192.168.101.4:7024", // Sử dụng IP của máy tính để cho phép kết nối trong mạng nội bộ
       "sslPort": 44319
     }
   },
@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5182",
+      "applicationUrl": "http://192.168.101.4:7024", // Đặt URL thành IP của máy tính
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -24,7 +24,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7024;http://localhost:5182",
+      "applicationUrl": "https://192.168.101.4:7024;http://192.168.101.4:5182", // Đặt URL thành IP của máy tính
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -32,7 +32,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "swagger", 
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

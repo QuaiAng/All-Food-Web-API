@@ -2,20 +2,24 @@
 using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IRepositories;
+using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IServices;
 using AllFoodAPI.Infrastructure.Data;
 using AllFoodAPI.WebApi.Models.Product;
 using System.Diagnostics.Metrics;
+using System.Linq;
 
 namespace AllFoodAPI.Application.Service
 {
     public class ProductService : IProductService
     {
         private readonly IProductRepository _repository;
+        private readonly IShopRepository _shopRepository;
 
-        public ProductService(IProductRepository repository)
+        public ProductService(IProductRepository repository, IShopRepository shopRepository)
         {
             _repository = repository;
+            _shopRepository = shopRepository;
         }
         public async Task<bool> AddProduct(AddProductModel AddProduct)
         {
@@ -123,12 +127,23 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public async Task<IEnumerable<ProductDTO>> GetProductsByName(string name)
+        public async Task<IEnumerable<ResponseSearch>> GetProductsByName(string name)
         {
+
             try
             {
+               
                 var products = await _repository.GetProductsByName(name);
-                var productDTOs = products.Select(u => ProductDTO.FromEntity(u));
+                
+                var productDTOs = products.Where(u => u.Shop.ShopId == u.ShopId).Select(u => new ResponseSearch {
+
+                    ProductName = u.ProductName,
+                    Price = u.Price,
+                    ShopName = u.Shop.ShopName,
+                    ProductId = u.ProductId,
+                    ShopAddress = u.Shop.Address,
+
+                });
 
                 return productDTOs;
             }

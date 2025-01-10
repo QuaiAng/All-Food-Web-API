@@ -444,7 +444,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AllFoodAPI.Core.DTOs.ProductDTO",
+        "Type": "AllFoodAPI.WebApi.Models.Product.ResponseSearch",
         "MediaTypes": [
           "text/plain",
           "application/json",

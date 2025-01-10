@@ -63,7 +63,7 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
         [HttpGet("name={name}")]
-        public async Task<ActionResult<ProductDTO>> GetProductByName(string name="")
+        public async Task<ActionResult<ResponseSearch>> GetProductByName(string name="")
         {
             if (string.IsNullOrEmpty(name)) return BadRequest(new { success = false, message = "Tên không hợp lệ" });
             try
