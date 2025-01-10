@@ -13,8 +13,6 @@ public partial class OrderDetail
 
     public int Price { get; set; }
 
-    public int Total { get; set; }
-
     public string? Note { get; set; }
 
     public virtual Order Order { get; set; } = null!;

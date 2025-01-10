@@ -7,10 +7,6 @@ public partial class Order
 {
     public int OrderId { get; set; }
 
-    public int UserId { get; set; }
-
-    public int ShopId { get; set; }
-
     public DateOnly Date { get; set; }
 
     public int Total { get; set; }
@@ -19,15 +15,19 @@ public partial class Order
 
     public bool? Status { get; set; }
 
-    public int? VoucherId { get; set; }
-
-    public string PaymentMethod { get; set; } = null!;
+    public sbyte PaymentMethod { get; set; }
 
     public int OrderStatus { get; set; }
 
+    public decimal Discount { get; set; }
+
+    public string FullNameUser { get; set; } = null!;
+
+    public string ShopName { get; set; } = null!;
+
+    public string PhoneNum { get; set; } = null!;
+
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
-    public virtual Shop Shop { get; set; } = null!;
-
-    public virtual User User { get; set; } = null!;
+    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 }

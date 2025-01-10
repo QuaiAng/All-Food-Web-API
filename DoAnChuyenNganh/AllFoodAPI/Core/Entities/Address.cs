@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace AllFoodAPI.Core.Entities;
 
@@ -12,5 +11,5 @@ public partial class Address
 
     public string Address1 { get; set; } = null!;
 
-    [JsonIgnore] public virtual User User { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 }

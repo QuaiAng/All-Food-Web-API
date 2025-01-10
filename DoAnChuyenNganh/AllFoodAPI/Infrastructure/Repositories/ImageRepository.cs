@@ -1,5 +1,4 @@
-﻿using AllFoodAPI.Core.Entities;
-using AllFoodAPI.Core.Interfaces.IRepository;
+﻿using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;

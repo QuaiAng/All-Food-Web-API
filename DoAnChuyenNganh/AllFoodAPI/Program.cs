@@ -1,5 +1,4 @@
 ﻿using AllFoodAPI.Application.Service;
-using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Interfaces.IRepositories;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IService;

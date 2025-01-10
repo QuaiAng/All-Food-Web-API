@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\infrastructure\\data\\allfooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\data\\allfooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\application\\service\\shopservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\shopservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\web_api\\doan\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -174,11 +186,50 @@
       "DocumentGroups": [
         {
           "DockedHeight": 207,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Entities\\Order.cs",
+              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\Order.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Entities\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T16:15:21.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AllfoodDbContext.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Data\\AllfoodDbContext.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Data\\AllfoodDbContext.cs",
+              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Data\\AllfoodDbContext.cs",
+              "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Data\\AllfoodDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T16:14:23.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\UserService.cs",
+              "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\UserService.cs",
+              "RelativeToolTip": "AllFoodAPI\\Application\\Service\\UserService.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAIAwwNIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:09:57.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ShopRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\ShopRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\ShopRepository.cs",
@@ -186,11 +237,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\ShopRepository.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAA6wF8AAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:48:58.706Z"
+              "WhenOpened": "2025-01-09T08:48:58.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "IShopRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\IShopRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IShopRepository.cs",
@@ -202,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "IShopService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\IShopService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\IShopService.cs",
@@ -214,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "ReviewRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\ReviewRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\ReviewRepository.cs",
@@ -222,11 +274,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\ReviewRepository.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:42:22.334Z"
+              "WhenOpened": "2025-01-09T05:42:22.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ShopService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\ShopService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\ShopService.cs",
@@ -234,24 +287,24 @@
               "RelativeToolTip": "AllFoodAPI\\Application\\Service\\ShopService.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAAAswHEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T00:24:50.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T00:24:50.287Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
               "ToolTip": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAswKEAAABtAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAwJcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T05:44:54.799Z"
+              "WhenOpened": "2025-01-09T05:44:54.799Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ReviewController.cs",
@@ -263,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "ShopController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ShopController.cs",
@@ -275,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "UpdateUserModel.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Models\\User\\UpdateUserModel.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Models\\User\\UpdateUserModel.cs",
@@ -287,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AddUserModel.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Models\\User\\AddUserModel.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Models\\User\\AddUserModel.cs",
@@ -299,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Shop.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\Shop.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Entities\\Shop.cs",
@@ -311,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ShopDTO.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\DTOs\\ShopDTO.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\DTOs\\ShopDTO.cs",
@@ -323,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "ICartRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICartRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICartRepository.cs",
@@ -335,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ProductController.cs",
@@ -347,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "IProductService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\IProductService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\IProductService.cs",
@@ -359,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\ProductRepository.cs",
@@ -367,11 +420,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAnwGQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T16:20:42.473Z"
+              "WhenOpened": "2025-01-07T16:20:42.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\CartController.cs",
@@ -383,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\ProductService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\ProductService.cs",
@@ -395,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "CartService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\CartService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\CartService.cs",
@@ -407,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "ICartService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\ICartService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\ICartService.cs",
@@ -419,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "AddressController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\AddressController.cs",
@@ -431,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IProductRepository.cs",
@@ -443,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "CartDetailController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\CartDetailController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\CartDetailController.cs",
@@ -455,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "CartRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\CartRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\CartRepository.cs",
@@ -463,11 +517,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\CartRepository.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwBQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T00:08:18.899Z"
+              "WhenOpened": "2025-01-03T00:08:18.899Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "ReportController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ReportController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ReportController.cs",
@@ -479,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\OrderController.cs",
@@ -491,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\CategoryController.cs",
@@ -503,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "VoucherCotroller.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\VoucherCotroller.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\VoucherCotroller.cs",
@@ -515,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "CartDetailRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\CartDetailRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\CartDetailRepository.cs",
@@ -523,11 +578,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\CartDetailRepository.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAgwC8AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T01:54:46.653Z"
+              "WhenOpened": "2025-01-03T01:54:46.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "ImageController.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ImageController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ImageController.cs",
@@ -539,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "CartDetailService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\CartDetailService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\CartDetailService.cs",
@@ -551,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "ICartDetailService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\ICartDetailService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\ICartDetailService.cs",
@@ -563,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "ImageService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\ImageService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\ImageService.cs",
@@ -575,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "AddressService.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\AddressService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\AddressService.cs",
@@ -587,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "ICartDetailRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICartDetailRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICartDetailRepository.cs",
@@ -599,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "IImageRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\IImageRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IImageRepository.cs",
@@ -611,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "ImageRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\ImageRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\ImageRepository.cs",
@@ -619,11 +675,12 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\ImageRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T02:26:45.293Z"
+              "WhenOpened": "2025-01-03T02:26:45.293Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICategoryRepository.cs",
@@ -635,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "CartDetail.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\CartDetail.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Entities\\CartDetail.cs",
@@ -647,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "CartDTO.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\DTOs\\CartDTO.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\DTOs\\CartDTO.cs",
@@ -659,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\web_api\\DoAn\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Entities\\Cart.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Entities\\Cart.cs",

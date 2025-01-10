@@ -47,9 +47,9 @@ public partial class AllfoodDbContext : DbContext
 
     public virtual DbSet<Voucher> Vouchers { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseMySql("server=localhost;database=allfood_db;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.32-mariadb"));
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseMySql("server=localhost;database=allfood_db;user=root", ServerVersion.Parse("10.4.32-mariadb"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -200,10 +200,6 @@ public partial class AllfoodDbContext : DbContext
 
             entity.ToTable("order");
 
-            entity.HasIndex(e => e.ShopId, "shop_id");
-
-            entity.HasIndex(e => e.UserId, "user_id");
-
             entity.Property(e => e.OrderId)
                 .HasColumnType("int(11)")
                 .HasColumnName("order_id");
@@ -211,15 +207,25 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.DeliveryAddress)
                 .HasColumnType("text")
                 .HasColumnName("delivery_address");
+            entity.Property(e => e.Discount)
+                .HasPrecision(10, 2)
+                .HasColumnName("discount");
+            entity.Property(e => e.FullNameUser)
+                .HasMaxLength(255)
+                .HasColumnName("full_name_user");
             entity.Property(e => e.OrderStatus)
                 .HasColumnType("int(11)")
                 .HasColumnName("order_status");
             entity.Property(e => e.PaymentMethod)
-                .HasColumnType("text")
+                .HasDefaultValueSql("'1'")
+                .HasColumnType("tinyint(4)")
                 .HasColumnName("payment_method");
-            entity.Property(e => e.ShopId)
-                .HasColumnType("int(11)")
-                .HasColumnName("shop_id");
+            entity.Property(e => e.PhoneNum)
+                .HasMaxLength(20)
+                .HasColumnName("phone_num");
+            entity.Property(e => e.ShopName)
+                .HasMaxLength(255)
+                .HasColumnName("shop_name");
             entity.Property(e => e.Status)
                 .IsRequired()
                 .HasDefaultValueSql("'1'")
@@ -227,20 +233,6 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Total)
                 .HasColumnType("int(11)")
                 .HasColumnName("total");
-            entity.Property(e => e.UserId)
-                .HasColumnType("int(11)")
-                .HasColumnName("user_id");
-            entity.Property(e => e.VoucherId)
-                .HasColumnType("int(11)")
-                .HasColumnName("voucher_id");
-
-            entity.HasOne(d => d.Shop).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.ShopId)
-                .HasConstraintName("order_ibfk_2");
-
-            entity.HasOne(d => d.User).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("order_ibfk_1");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
@@ -268,9 +260,6 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Quantity)
                 .HasColumnType("int(11)")
                 .HasColumnName("quantity");
-            entity.Property(e => e.Total)
-                .HasColumnType("int(11)")
-                .HasColumnName("total");
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.OrderId)
@@ -381,6 +370,10 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.ProductName)
                 .HasColumnType("tinytext")
                 .HasColumnName("product_name");
+            entity.Property(e => e.Rating)
+                .HasDefaultValueSql("'1'")
+                .HasColumnType("int(11)")
+                .HasColumnName("rating");
             entity.Property(e => e.SalesCount)
                 .HasDefaultValueSql("'0'")
                 .HasColumnType("int(11)")
@@ -445,6 +438,8 @@ public partial class AllfoodDbContext : DbContext
 
             entity.ToTable("review");
 
+            entity.HasIndex(e => e.OrderId, "fk_review_order");
+
             entity.HasIndex(e => e.ProductId, "product_id");
 
             entity.HasIndex(e => e.UserId, "user_id");
@@ -456,6 +451,9 @@ public partial class AllfoodDbContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("comment");
             entity.Property(e => e.Date).HasColumnName("date");
+            entity.Property(e => e.OrderId)
+                .HasColumnType("int(11)")
+                .HasColumnName("order_id");
             entity.Property(e => e.ProductId)
                 .HasColumnType("int(11)")
                 .HasColumnName("product_id");
@@ -467,6 +465,10 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.UserId)
                 .HasColumnType("int(11)")
                 .HasColumnName("user_id");
+
+            entity.HasOne(d => d.Order).WithMany(p => p.Reviews)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("fk_review_order");
 
             entity.HasOne(d => d.Product).WithMany(p => p.Reviews)
                 .HasForeignKey(d => d.ProductId)
