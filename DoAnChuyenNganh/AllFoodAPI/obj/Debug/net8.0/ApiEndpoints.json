@@ -430,6 +430,22 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
+    "Method": "GetNHighestProducts",
+    "RelativePath": "api/product/Get{n}HighestProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
     "Method": "GetProductByName",
     "RelativePath": "api/product/name={name}",
     "HttpMethod": "GET",

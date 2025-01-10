@@ -1,4 +1,5 @@
-﻿using AllFoodAPI.Core.Entities;
+﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
 
 namespace AllFoodAPI.Core.Interfaces.IRepositories
 {
@@ -14,6 +15,8 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
         Task<bool> IsShopExist(int shopId);
         Task<bool> IsCategoryExist(int categoryId);
         Task<IEnumerable<Product>> GetProductsByName(string name);
-        
+        Task<IEnumerable<Product>> GetNHighestProducts(int n);
+
+
     }
 }

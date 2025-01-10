@@ -16,7 +16,7 @@ namespace AllFoodAPI.Core.Interfaces.IServices
         Task<bool> IsShopExist(int shopId);
         Task<bool> IsCategoryExist(int categoryId);
         Task<IEnumerable<ResponseSearch>> GetProductsByName(string name);
-
+        Task<IEnumerable<ProductDTO>> GetNHighestProducts(int n);
 
     }
 }

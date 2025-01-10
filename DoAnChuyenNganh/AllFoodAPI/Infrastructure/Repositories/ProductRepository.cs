@@ -61,6 +61,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<Product>> GetNHighestProducts(int n)
+        {
+            try
+            {
+                var products = await _context.Products.OrderByDescending(u => u.SalesCount).Take(n).ToListAsync();
+                return products;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
         public async Task<IEnumerable<Product>> GetProductByCategoryId(int categoryId)
         {
             try

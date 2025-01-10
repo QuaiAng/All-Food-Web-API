@@ -31,6 +31,22 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        
+        [HttpGet("Get{n:int}HighestProducts")]
+        public async Task<IActionResult> GetNHighestProducts(int n)
+        {
+            try
+            {
+                var result = await _service.GetNHighestProducts(n);
+                return Ok(new { success = true, data = result });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         [HttpGet("productId={id:int}")]
         public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {
