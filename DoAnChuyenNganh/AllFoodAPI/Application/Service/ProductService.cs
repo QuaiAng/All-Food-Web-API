@@ -87,13 +87,25 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public async Task<IEnumerable<ProductDTO>> GetNHighestProducts(int n)
+        public async Task<IEnumerable<BestSellerModel>> GetNHighestProducts(int n)
         {
             try
             {
                 var products = await _repository.GetNHighestProducts(n);
 
-                var productDTOs = products.Select(u => ProductDTO.FromEntity(u));
+                var productDTOs = products.Select(u => new BestSellerModel
+                {
+                    ProductId = u.ProductId,
+                    ShopId = u.ShopId,
+                    CategoryId = u.CategoryId,
+                    Available = u.Available,
+                    Description = u.Description,
+                    Price = u.Price,
+                    ProductName = u.ProductName,
+                    Rating = u.Rating,
+                    SalesCount = u.SalesCount,
+                    ShopAddress = u.Shop.Address,
+                });
 
                 return productDTOs;
             }

@@ -19,6 +19,8 @@ namespace AllFoodAPI.Core.DTOs
         public int? SalesCount { get; set; }
 
         public int Available { get; set; }
+        public int? Rating { get; set; }
+
 
 
         public static ProductDTO FromEntity(Product product)
@@ -33,6 +35,7 @@ namespace AllFoodAPI.Core.DTOs
                 CategoryId = product.CategoryId,
                 SalesCount = product.SalesCount,
                 Available = product.Available,
+                Rating = product.Rating,
             };
         }
 
@@ -48,6 +51,7 @@ namespace AllFoodAPI.Core.DTOs
                 CategoryId = productDTO.CategoryId,
                 SalesCount = productDTO.SalesCount,
                 Available = productDTO.Available,
+                Rating= productDTO.Rating,
             };
         }
     }

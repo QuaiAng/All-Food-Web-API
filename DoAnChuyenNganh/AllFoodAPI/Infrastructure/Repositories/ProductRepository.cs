@@ -65,7 +65,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var products = await _context.Products.OrderByDescending(u => u.SalesCount).Take(n).ToListAsync();
+                var products = await _context.Products.OrderByDescending(u => u.SalesCount).Include(p => p.Shop).Take(n).ToListAsync();
                 return products;
             }
             catch (Exception ex)
