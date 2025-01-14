@@ -10,6 +10,8 @@ namespace AllFoodAPI.Core.DTOs
 
         public int UserId { get; set; }
 
+        public string? FullName { get; set; }
+
         public string? Comment { get; set; }
 
         public double Rating { get; set; }
@@ -25,6 +27,7 @@ namespace AllFoodAPI.Core.DTOs
             Comment = review.Comment,
             Rating = review.Rating,
             Date = review.Date,
+            FullName = review.User.FullName,
         };
 
         public static Review ToEntity(ReviewDTO review) => new Review

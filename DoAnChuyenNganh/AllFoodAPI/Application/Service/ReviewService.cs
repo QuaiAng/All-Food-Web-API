@@ -95,6 +95,7 @@ namespace AllFoodAPI.Application.Service
             try
             {
                 var reviews = await _reviewRepository.GetReviewByProductId(productId);
+                
                 var reviewDTOs = reviews.Select(u => ReviewDTO.FromEntity(u));
                 return reviewDTOs;
             }

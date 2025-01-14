@@ -12,6 +12,8 @@ namespace AllFoodAPI.Core.DTOs
 
         public int Total { get; set; }
 
+        //public string
+
         public int ShopId { get; set; }
 
         public static CartDetailDTO FromEntity(CartDetail cartDetail) => new CartDetailDTO

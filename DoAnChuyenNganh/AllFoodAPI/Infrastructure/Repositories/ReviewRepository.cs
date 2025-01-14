@@ -49,7 +49,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var reviews = await _context.Reviews.Where(u => u.Status == true).ToListAsync();
+                var reviews = await _context.Reviews.Where(u => u.Status == true).Include(p => p.User).ToListAsync();
                 return reviews;
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var review = await _context.Reviews.SingleOrDefaultAsync(u => u.ReviewId == id && u.Status == true);
+                var review = await _context.Reviews.Include(p => p.User).SingleOrDefaultAsync(u => u.ReviewId == id && u.Status == true);
                 if (review == null)
                     return null;
                 return review;
@@ -79,7 +79,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var reviews = await _context.Reviews.Where(u => u.Status == true && u.ProductId == productId).ToListAsync();
+                var reviews = await _context.Reviews.Where(u => u.Status == true && u.ProductId == productId).Include(p => p.User).ToListAsync();
                 return reviews;
             }
             catch (Exception ex)

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "VV7aLnVJUCqKk/M+3du+fvfLl2qL6PdrHQknuLTfd7Q=",
+  "Hash": "S+vE8QGlF9gwMmR6QOoXVPB9fJr2A3P/99l9276H86c=",
   "Source": "AllFoodAPI",
   "BasePath": "_content/AllFoodAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -53,7 +53,7 @@ namespace AllFoodAPI.WebApi.Controllers
         }
         
         
-        [HttpGet("productId={id:int}")]
+        [HttpGet("productId={productId:int}")]
         public async Task<ActionResult<ReviewDTO>> GetReviewByProductId(int productId)
         {
             if (productId == 0) return BadRequest(new { success = false, message = "Product ID không hợp lệ." });
