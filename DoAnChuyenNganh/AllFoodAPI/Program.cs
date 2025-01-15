@@ -7,6 +7,7 @@ using AllFoodAPI.Infrastructure.Data;
 using AllFoodAPI.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -87,6 +88,15 @@ builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 
 
 var app = builder.Build();
+
+// Cấu hình phục vụ tệp tĩnh từ thư mục ngoài
+app.UseStaticFiles(); // Phục vụ wwwroot như mặc định
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(@"C:\DoAnChuyenNganh\FoodImage"),
+    RequestPath = "/api/foodimage"
+});
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

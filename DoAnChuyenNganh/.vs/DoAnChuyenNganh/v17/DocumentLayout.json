@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Program.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Program.cs",
+              "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Program.cs",
+              "RelativeToolTip": "AllFoodAPI\\Program.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T07:00:22.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ProductController.cs",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\CategoryController.cs",
@@ -59,12 +76,11 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwC0AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T01:55:10.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T01:55:10.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\CategoryService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\CategoryService.cs",
@@ -72,12 +88,11 @@
               "RelativeToolTip": "AllFoodAPI\\Application\\Service\\CategoryService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwAsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T01:51:06.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T01:51:06.676Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\CategoryRepository.cs",
@@ -85,12 +100,11 @@
               "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\CategoryRepository.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAswEIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T01:51:03.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T01:51:03.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\ICategoryService.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\ICategoryService.cs",
@@ -98,12 +112,11 @@
               "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IServices\\ICategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T01:50:52.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T01:50:52.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICategoryRepository.cs",
@@ -111,8 +124,7 @@
               "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\ICategoryRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-15T01:50:06.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T01:50:06.676Z"
             }
           ]
         }
