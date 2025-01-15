@@ -226,12 +226,12 @@ namespace AllFoodAPI.Application.Service
                         throw new DuplicateException("Phone", "Số điện thoại đã tồn tại");
                 }
 
+                if (string.IsNullOrEmpty(userUpdate.ImageUrl)) user.ImageUrl = user.ImageUrl;
 
                 if (user != null)
                 {
                     user.Email = userUpdate.Email;
                     user.FullName = userUpdate.FullName;
-                    user.ImageUrl = userUpdate.ImageUrl;
                     user.Phone = userUpdate.Phone;
                 }
 
