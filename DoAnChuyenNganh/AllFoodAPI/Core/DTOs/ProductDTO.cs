@@ -20,6 +20,7 @@ namespace AllFoodAPI.Core.DTOs
 
         public int Available { get; set; }
         public int? Rating { get; set; }
+        public string? ImageUrl { get; set; }
 
 
 
@@ -36,6 +37,7 @@ namespace AllFoodAPI.Core.DTOs
                 SalesCount = product.SalesCount,
                 Available = product.Available,
                 Rating = product.Rating,
+                ImageUrl = product.ImageUrl,
             };
         }
 
@@ -52,6 +54,7 @@ namespace AllFoodAPI.Core.DTOs
                 SalesCount = productDTO.SalesCount,
                 Available = productDTO.Available,
                 Rating= productDTO.Rating,
+                ImageUrl = productDTO.ImageUrl,
             };
         }
     }

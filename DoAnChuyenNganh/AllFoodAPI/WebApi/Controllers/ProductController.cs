@@ -63,7 +63,7 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         }
 
-        [HttpGet("categoryId={id:int}")]
+        [HttpGet("categoryId={categoryId:int}")]
         public async Task<ActionResult<ProductDTO>> GetProductByCategoryId(int categoryId)
         {
             if (categoryId == 0) return BadRequest(new { success = false, message = "Category ID không hợp lệ" });

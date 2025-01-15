@@ -31,6 +31,21 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        
+        [HttpGet("shopId={shopId:int}")]
+        public async Task<IActionResult> GetCategoriesByShopId(int shopId)
+        {
+            try
+            {
+                if (shopId == 0) return BadRequest(new { success = false, message = "ShopID không hợp lệ" });
+                var result = await _service.GetCategoriesByShopId(shopId);
+                return Ok(new { success = true, data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = ex.Message });
+            }
+        }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CategoryDTO>> GetCategoryById(int id)
         {

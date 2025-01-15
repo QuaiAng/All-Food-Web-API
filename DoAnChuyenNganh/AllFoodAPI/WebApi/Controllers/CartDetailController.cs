@@ -2,6 +2,7 @@
 using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IServices;
+using AllFoodAPI.WebApi.Models.Cart;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 
@@ -19,12 +20,10 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddCartDetail(CartDetailDTO cartDetailDTO)
+        public async Task<IActionResult> AddCartDetail([FromBody]AddCartDetailModel cartDetailDTO)
         {
             if (cartDetailDTO.ProductId == 0) return BadRequest(new { success = false, message = "ProductID không hợp lệ" });
-            if (cartDetailDTO.Quantity <= 0) return BadRequest(new { success = false, message = "Số lượng không hợp lệ" });
-            if (cartDetailDTO.Price < 0 || cartDetailDTO.Price > 2000000000) return BadRequest(new { success = false, message = "Giá không hợp lệ" });
-            if (cartDetailDTO.Total != cartDetailDTO.Price * cartDetailDTO.Quantity) return BadRequest(new { success = false, message = "Tổng cộng không hợp lệ" });
+            if (cartDetailDTO.Quantity < 1) return BadRequest(new { success = false, message = "Số lượng không hợp lệ" });
             try
             {
                 var result = await _service.AddCartDetail(cartDetailDTO);
@@ -51,15 +50,50 @@ namespace AllFoodAPI.WebApi.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        
-        [HttpPut("update/{id:int}")]
-        public async Task<IActionResult> UpdateCartDetail(int quantity, int id)
+
+        [HttpDelete("remove/productId={productId:int}/cartId={cartId:int}")]
+        public async Task<IActionResult> DeleteCartDetail(int productId, int cartId)
         {
-            if (id == 0) return BadRequest(new { success = false, message = "ProductID không hợp lệ" });
+            if (productId == 0) return BadRequest(new { success = false, message = "ProductID không hợp lệ" });
+            if (cartId == 0) return BadRequest(new { success = false, message = "CartID không hợp lệ" });
+
+            try
+            {
+                var result = await _service.DeleteCartDetail(productId, cartId);
+                return result
+                    ? Ok(new { success = true, message = "Xoá thành công" })
+                    : StatusCode(StatusCodes.Status500InternalServerError, new
+                    {
+                        success = false,
+                        message = "Xoá thất bại"
+                    });
+            }
+            catch (DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message
+
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
+        [HttpPut("updatequantity={quantity:int}/productId={productId:int}/cartId={cartId:int}")]
+        public async Task<IActionResult> UpdateCartDetail(int quantity, int productId, int cartId)
+        {
+            if (productId == 0) return BadRequest(new { success = false, message = "ProductID không hợp lệ" });
+            if (quantity == 0) return BadRequest(new { success = false, message = "Số lượng không hợp lệ" });
+            if (cartId == 0) return BadRequest(new { success = false, message = "CartID không hợp lệ" });
            
             try
             {
-                var result = await _service.UpdateCartDetail(quantity, id);
+                var result = await _service.UpdateCartDetail(quantity, productId, cartId);
                 return result
                     ? Ok(new { success = true, message = "Cập nhật thành công" })
                     : StatusCode(StatusCodes.Status500InternalServerError, new

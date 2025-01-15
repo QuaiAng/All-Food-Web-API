@@ -105,6 +105,7 @@ namespace AllFoodAPI.Application.Service
                     Rating = u.Rating,
                     SalesCount = u.SalesCount,
                     ShopAddress = u.Shop.Address,
+                    ImageUrl = u.ImageUrl!
                 });
 
                 return productDTOs;
@@ -164,14 +165,16 @@ namespace AllFoodAPI.Application.Service
             {
                
                 var products = await _repository.GetProductsByName(name);
-                
-                var productDTOs = products.Where(u => u.Shop.ShopId == u.ShopId).Select(u => new ResponseSearch {
+
+                var productDTOs = products.Where(u => u.Shop.ShopId == u.ShopId).Select(u => new ResponseSearch
+                {
 
                     ProductName = u.ProductName,
                     Price = u.Price,
                     ShopName = u.Shop.ShopName,
                     ProductId = u.ProductId,
                     ShopAddress = u.Shop.Address,
+                    ImageUrl = u.ImageUrl!
 
                 });
 

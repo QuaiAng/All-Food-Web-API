@@ -5,6 +5,7 @@ using AllFoodAPI.Core.Interfaces.IRepositories;
 using AllFoodAPI.Core.Interfaces.IRepository;
 using AllFoodAPI.Core.Interfaces.IServices;
 using AllFoodAPI.Infrastructure.Repositories;
+using AllFoodAPI.WebApi.Models.Cart;
 using System.Runtime.Intrinsics.X86;
 
 namespace AllFoodAPI.Application.Service
@@ -21,15 +22,30 @@ namespace AllFoodAPI.Application.Service
             _shopRepository = shopRepository;
             _productRepository = productRepository;
         }
-        public async Task<bool> AddCartDetail(CartDetailDTO cartDetail)
+        public async Task<bool> AddCartDetail(AddCartDetailModel addCartDetail)
         {
             try
             {
-                if (await _productRepository.GetProductById(cartDetail.ProductId) == null)
-                    throw new DuplicateException("ProductID", $"Không tồn tại sản phẩm có ID {cartDetail.ProductId}");
-                if (await _shopRepository.GetShopById(cartDetail.ShopId) == null)
-                    throw new DuplicateException("ShopID", $"Không tồn tại shop có ID {cartDetail.ShopId}");
-                return await _cartDetailRepository.AddCartDetail(CartDetailDTO.ToEntity(cartDetail));
+                if (await _productRepository.GetProductById(addCartDetail.ProductId) == null)
+                    throw new DuplicateException("ProductID", $"Không tồn tại sản phẩm có ID {addCartDetail.ProductId}");
+                if (await _shopRepository.GetShopById(addCartDetail.ShopId) == null)
+                    throw new DuplicateException("ShopID", $"Không tồn tại shop có ID {addCartDetail.ShopId}");
+                if (await _cartDetailRepository.IsExistProductInCart(addCartDetail.ProductId, addCartDetail.CartId))
+                {
+                    var cartDetailUpdate = await _cartDetailRepository.GetCartDetailByProductId(addCartDetail.ProductId, addCartDetail.CartId);
+                    if (cartDetailUpdate != null)
+                        cartDetailUpdate.Quantity = (cartDetailUpdate.Quantity + addCartDetail.Quantity);
+                    return await _cartDetailRepository.UpdateCartDetail(cartDetailUpdate!);
+                }
+                   
+                var cartDetail = new CartDetail
+                {
+                    CartId = addCartDetail.CartId,
+                    ProductId = addCartDetail.ProductId,
+                    Quantity = addCartDetail.Quantity,
+                    ShopId = addCartDetail.ShopId,
+                };
+                return await _cartDetailRepository.AddCartDetail(cartDetail);
             }
             catch
             {
@@ -37,13 +53,13 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public async Task<bool> DeteleCartDetail(int id)
+        public async Task<bool> DeleteCartDetail(int productId, int cartId)
         {
             try
             {
-                if (await _cartDetailRepository.GetCartDetailByProductId(id) == null)
+                if (await _cartDetailRepository.GetCartDetailByProductId(productId, cartId) == null)
                     throw new DuplicateException("CartDetail", "Không tồn tại sản phẩm này");
-                return await _cartDetailRepository.DeteleCartDetail(id);
+                return await _cartDetailRepository.DeteleCartDetail(productId, cartId);
             }
             catch
             {
@@ -51,12 +67,12 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public async Task<bool> UpdateCartDetail(int quantity, int id)
+        public async Task<bool> UpdateCartDetail(int quantity, int productId, int cartId)
         {
             try
             {
-                var cartDetail = await _cartDetailRepository.GetCartDetailByProductId(id);
-                if (cartDetail == null) throw new DuplicateException("Product", $"Không tồn tại cart detail có ID {id}");
+                var cartDetail = await _cartDetailRepository.GetCartDetailByProductId(productId, cartId);
+                if (cartDetail == null) throw new DuplicateException("Cartdetail", $"Không tồn tại cart detail có productID là {productId} và cartID là {cartId}");
                 cartDetail.Quantity = quantity;
                 return await _cartDetailRepository.UpdateCartDetail(cartDetail);
             }

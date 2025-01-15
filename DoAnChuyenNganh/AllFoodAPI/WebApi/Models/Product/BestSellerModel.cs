@@ -20,6 +20,7 @@
 
         public int? Rating { get; set; }
         public string ShopAddress { get; set; } = null!;
+        public string ImageUrl { get; set; } = null!;
        
 
     }

@@ -140,7 +140,28 @@
     "Parameters": [
       {
         "Name": "cartDetailDTO",
-        "Type": "AllFoodAPI.Core.DTOs.CartDetailDTO",
+        "Type": "AllFoodAPI.WebApi.Models.Cart.AddCartDetailModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CartDetailController",
+    "Method": "DeleteCartDetail",
+    "RelativePath": "api/cartdetail/remove/productId={productId}/cartId={cartId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cartId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -149,7 +170,7 @@
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.CartDetailController",
     "Method": "UpdateCartDetail",
-    "RelativePath": "api/cartdetail/update/{id}",
+    "RelativePath": "api/cartdetail/updatequantity={quantity}/productId={productId}/cartId={cartId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -157,10 +178,15 @@
       {
         "Name": "quantity",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
-        "Name": "id",
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cartId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -230,6 +256,22 @@
       {
         "Name": "categoryDTO",
         "Type": "AllFoodAPI.Core.DTOs.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CategoryController",
+    "Method": "GetCategoriesByShopId",
+    "RelativePath": "api/category/shopId={shopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shopId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -400,7 +442,7 @@
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
     "Method": "GetProductByCategoryId",
-    "RelativePath": "api/product/categoryId={id}",
+    "RelativePath": "api/product/categoryId={categoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -408,11 +450,6 @@
       {
         "Name": "categoryId",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],

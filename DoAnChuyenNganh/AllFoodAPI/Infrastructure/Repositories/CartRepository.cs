@@ -17,7 +17,14 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var cart = await _context.Carts.Where(u => u.UserId == userId).Include(c => c.CartDetails).SingleOrDefaultAsync();
+                var cart = await _context.Carts
+                                         .Where(u => u.UserId == userId)
+                                         .Include(c => c.CartDetails) // Bao gồm CartDetails
+                                             .ThenInclude(cd => cd.Product) // Bao gồm Product thông qua CartDetails
+                                         .Include(c => c.CartDetails)
+                                             .ThenInclude(cd => cd.Shop) // Bao gồm Shop thông qua CartDetails
+                                         .SingleOrDefaultAsync();
+
                 if (cart == null)
                     return null;
                 return cart;

@@ -121,18 +121,12 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.ProductId)
                 .HasColumnType("int(11)")
                 .HasColumnName("product_id");
-            entity.Property(e => e.Price)
-                .HasColumnType("int(11)")
-                .HasColumnName("price");
             entity.Property(e => e.Quantity)
                 .HasColumnType("int(11)")
                 .HasColumnName("quantity");
             entity.Property(e => e.ShopId)
                 .HasColumnType("int(11)")
                 .HasColumnName("shop_id");
-            entity.Property(e => e.Total)
-                .HasColumnType("int(11)")
-                .HasColumnName("total");
 
             entity.HasOne(d => d.Cart).WithMany(p => p.CartDetails)
                 .HasForeignKey(d => d.CartId)
@@ -364,6 +358,9 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Description)
                 .HasColumnType("text")
                 .HasColumnName("description");
+            entity.Property(e => e.ImageUrl)
+                .HasMaxLength(255)
+                .HasColumnName("image_url");
             entity.Property(e => e.Price)
                 .HasColumnType("int(11)")
                 .HasColumnName("price");

@@ -25,6 +25,8 @@ public partial class Product
 
     public int? Rating { get; set; }
 
+    public string? ImageUrl { get; set; }
+
     public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 
     public virtual Category Category { get; set; } = null!;

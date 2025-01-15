@@ -59,11 +59,26 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
-        public Task<Category?> GetCategoryById(int id)
+        public async Task<IEnumerable<Category>> GetCategoriesByShopId(int shopId)
         {
             try
             {
-                var category = _context.Categories.SingleOrDefaultAsync(u => u.CategoryId == id);
+                var categories = await _context.Categories.Where(u => u.ShopId == shopId).ToListAsync();
+                return categories;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
+        public async Task<Category?> GetCategoryById(int id)
+        {
+            try
+            {
+                var category = await _context.Categories.SingleOrDefaultAsync(u => u.CategoryId == id);
                 if (category == null) return null;
                 return category;
             }

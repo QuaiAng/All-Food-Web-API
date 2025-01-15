@@ -51,7 +51,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var shops = await _context.Shops.Where(u => u.Status == true).ToListAsync();
+                var shops = await _context.Shops.Where(u => u.Status == true).Include(p => p.User).ToListAsync();
                 return shops;
             }
             catch (Exception ex) {
@@ -65,7 +65,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var shop = await _context.Shops.SingleOrDefaultAsync(u => u.ShopId == shopId && u.Status == true);
+                var shop = await _context.Shops.Include(p => p.User).SingleOrDefaultAsync(u => u.ShopId == shopId && u.Status == true);
                 if (shop == null) 
                     return null;
                 return shop;
@@ -80,7 +80,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var shop = await _context.Shops.SingleOrDefaultAsync(u => u.UserId == userId);
+                var shop = await _context.Shops.Include(p => p.User).SingleOrDefaultAsync(u => u.UserId == userId);
                 return shop == null ? null : shop;
             }
             catch (Exception ex)
@@ -93,7 +93,7 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var shops = await _context.Shops.OrderByDescending(u => u.Rating).Take(n).ToListAsync();
+                var shops = await _context.Shops.OrderByDescending(u => u.Rating).Take(n).Include(p => p.User).ToListAsync();
                 return shops;
             }
             catch (Exception ex)

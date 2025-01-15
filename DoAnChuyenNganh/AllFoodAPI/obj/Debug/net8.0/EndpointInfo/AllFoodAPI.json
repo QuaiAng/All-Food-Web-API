@@ -225,17 +225,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CartDetailDTO"
+                "$ref": "#/components/schemas/AddCartDetailModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CartDetailDTO"
+                "$ref": "#/components/schemas/AddCartDetailModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CartDetailDTO"
+                "$ref": "#/components/schemas/AddCartDetailModel"
               }
             }
           }
@@ -247,7 +247,39 @@
         }
       }
     },
-    "/api/cartdetail/update/{id}": {
+    "/api/cartdetail/remove/productId={productId}/cartId={cartId}": {
+      "delete": {
+        "tags": [
+          "CartDetail"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cartId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cartdetail/updatequantity={quantity}/productId={productId}/cartId={cartId}": {
       "put": {
         "tags": [
           "CartDetail"
@@ -255,14 +287,24 @@
         "parameters": [
           {
             "name": "quantity",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
           },
           {
-            "name": "id",
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cartId",
             "in": "path",
             "required": true,
             "schema": {
@@ -282,6 +324,29 @@
       "get": {
         "tags": [
           "Category"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/category/shopId={shopId}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "parameters": [
+          {
+            "name": "shopId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -683,7 +748,7 @@
         }
       }
     },
-    "/api/product/categoryId={id}": {
+    "/api/product/categoryId={categoryId}": {
       "get": {
         "tags": [
           "Product"
@@ -691,18 +756,11 @@
         "parameters": [
           {
             "name": "categoryId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -1841,6 +1899,28 @@
   },
   "components": {
     "schemas": {
+      "AddCartDetailModel": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cartId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shopId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "AddProductModel": {
         "type": "object",
         "properties": {
@@ -2077,14 +2157,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "price": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
           "shopId": {
             "type": "integer",
             "format": "int32"
@@ -2097,32 +2169,6 @@
           },
           "shop": {
             "$ref": "#/components/schemas/Shop"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CartDetailDTO": {
-        "type": "object",
-        "properties": {
-          "productId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "price": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "shopId": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -2459,6 +2505,10 @@
             "format": "int32",
             "nullable": true
           },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
           "cartDetails": {
             "type": "array",
             "items": {
@@ -2543,6 +2593,10 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2623,6 +2677,10 @@
             "nullable": true
           },
           "shopAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
             "type": "string",
             "nullable": true
           },

@@ -8,6 +8,7 @@ namespace AllFoodAPI.Core.Interfaces.IService
     {
         Task<IEnumerable<CategoryDTO>> GetAllCategories();
         Task<CategoryDTO?> GetCategoryById(int id);
+        Task<IEnumerable<CategoryDTO>> GetCategoriesByShopId(int shopId);
         Task<bool> AddCategory(CategoryDTO categoryDTO);
         Task<bool> DeleteCategory(int id);
         Task<bool> UpdateCategory(CategoryDTO categoryDTO);

@@ -741,10 +741,10 @@ D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AllFoodAPI.props
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AllFoodAPI.props
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\staticwebassets.pack.json
-D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\AllFoodAPI.csproj.Up2Date
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\AllFoodAPI.dll
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\refint\AllFoodAPI.dll
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\AllFoodAPI.pdb
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\AllFoodAPI.genruntimeconfig.cache
 D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\ref\AllFoodAPI.dll
+D:\DoAnChuyenNganh\WebAPI\All-Food-Web-API\DoAnChuyenNganh\AllFoodAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -58,6 +58,20 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<CategoryDTO>> GetCategoriesByShopId(int shopId)
+        {
+            try
+            {
+                var categories = await _repository.GetCategoriesByShopId(shopId);
+                var categoryDTOs = categories.Select(u => CategoryDTO.FromEntity(u));
+                return categoryDTOs;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public async Task<CategoryDTO?> GetCategoryById(int id)
         {
             try
