@@ -18,7 +18,17 @@ namespace AllFoodAPI.Infrastructure.Repositories
             try
             {
                 _context.Orders.Add(order);
-                return await _context.SaveChangesAsync() > 0;
+                int result = await _context.SaveChangesAsync();
+                if(result > 0)
+                {
+                    //foreach(var item in order.OrderDetails)
+                    //{
+                    //    item.OrderId = order.OrderId;
+                    //    _context.OrderDetails.Add(item);
+                    //}
+                    return await _context.SaveChangesAsync() > 0;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -32,9 +42,9 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             try
             {
-                var order = await _context.Orders.SingleOrDefaultAsync(u => u.OrderId == orderId);
+                var order = await _context.Orders.SingleOrDefaultAsync(u => u.OrderId == orderId && u.Status == true);
                 if (order == null) return false;
-                order.Status = false;
+                order.OrderStatus = 1;
                 _context.Orders.Update(order);
                 return await _context.SaveChangesAsync() > 0;
             }
@@ -88,9 +98,9 @@ namespace AllFoodAPI.Infrastructure.Repositories
             }
         }
 
-        public Task<bool> UpdateOrder(Order order)
+        public async Task<bool> UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

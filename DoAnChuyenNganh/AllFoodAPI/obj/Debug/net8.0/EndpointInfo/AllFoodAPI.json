@@ -2129,6 +2129,13 @@
           "phoneNum": {
             "type": "string",
             "nullable": true
+          },
+          "orderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDetailDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2644,6 +2651,36 @@
           },
           "product": {
             "$ref": "#/components/schemas/Product"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDetailDTO": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

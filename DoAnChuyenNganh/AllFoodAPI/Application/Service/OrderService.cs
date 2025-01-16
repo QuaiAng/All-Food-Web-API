@@ -37,7 +37,15 @@ namespace AllFoodAPI.Application.Service
                     UserId = order.UserId,
                     OrderStatus = 0,
                     Status = true,
-                    
+                    OrderDetails = order.OrderDetails.Select(u => new OrderDetail
+                    {
+                        OrderId = u.OrderId,
+                        Note = u.Note,
+                        Price = u.Price,
+                        ProductName = u.ProductName,
+                        Quantity = u.Quantity,
+
+                    }).ToList(),
 
                 };
                 return await _repository.AddOrder(orderAdd);

@@ -1,4 +1,6 @@
-﻿namespace AllFoodAPI.WebApi.Models.Order
+﻿using AllFoodAPI.Core.DTOs;
+
+namespace AllFoodAPI.WebApi.Models.Order
 {
     public class AddOrderModel
     {
@@ -17,6 +19,8 @@
         public string ShopName { get; set; } = null!;
 
         public string PhoneNum { get; set; } = null!;
+        public virtual ICollection<OrderDetailDTO> OrderDetails { get; set; } = new List<OrderDetailDTO>();
+
 
     }
 }
