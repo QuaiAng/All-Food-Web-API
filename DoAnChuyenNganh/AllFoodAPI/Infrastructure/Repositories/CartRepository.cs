@@ -1,4 +1,5 @@
-﻿using AllFoodAPI.Core.Entities;
+﻿using System.Net;
+using AllFoodAPI.Core.Entities;
 using AllFoodAPI.Core.Interfaces.IRepositories;
 using AllFoodAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,22 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
             _context = context;
         }
+
+        public async Task<bool> AddCart(Cart cart)
+        {
+            try
+            {
+                _context.Carts.Add(cart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi thêm", ex);
+            }
+        }
+
         public async Task<Cart?> GetCartByUserId(int userId)
         {
             try
@@ -35,6 +52,11 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
                 throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
             }
+        }
+
+        public async Task<bool> IsUserHasCart(int userId)
+        {
+            return await _context.Carts.Where(u => u.UserId == userId).CountAsync() > 0;
         }
     }
 }

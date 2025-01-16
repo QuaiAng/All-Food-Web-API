@@ -116,6 +116,22 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.CartController",
+    "Method": "AddCart",
+    "RelativePath": "api/cart/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "AllFoodAPI.WebApi.Models.Cart.AddCartModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.CartController",
     "Method": "GetCartByUserId",
     "RelativePath": "api/cart/userId={userId}",
     "HttpMethod": "GET",

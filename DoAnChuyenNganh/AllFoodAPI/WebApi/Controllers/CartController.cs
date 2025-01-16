@@ -1,5 +1,8 @@
-﻿using AllFoodAPI.Core.Entities;
+﻿using AllFoodAPI.Core.DTOs;
+using AllFoodAPI.Core.Entities;
+using AllFoodAPI.Core.Exceptions;
 using AllFoodAPI.Core.Interfaces.IServices;
+using AllFoodAPI.WebApi.Models.Cart;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,5 +36,30 @@ namespace AllFoodAPI.WebApi.Controllers
             }
         
         }
+        [HttpPost("add")]
+        public async Task<IActionResult> AddCart([FromBody] AddCartModel cart)
+        {
+            if (cart.UserId == 0) return BadRequest(new { success = false, message = "ID user không hợp lệ" });
+            if (cart.Total < 0) return BadRequest(new { success = false, message = "Total không hợp lệ" });
+            try
+            {
+                var result = await _service.AddCart(cart);
+                return Ok(new { success = true, message = "Thêm thành công" });
+            }
+            catch (DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { success = false, message = $"Đã xảy ra lỗi: {ex.Message}" });
+            }
+        }
+
     }
 }

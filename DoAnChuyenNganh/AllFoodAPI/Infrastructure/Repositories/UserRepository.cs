@@ -19,7 +19,19 @@ namespace AllFoodAPI.Infrastructure.Repositories
         {
 
             _context.Users.Add(userEntity);
-            return await _context.SaveChangesAsync() > 0;
+            int result = await _context.SaveChangesAsync();
+            if (result > 0)
+            {
+                var cart = new Cart
+                {
+                    UserId = userEntity.UserId,
+                    Total = 0
+                };
+                _context.Carts.Add(cart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            else return false;
+
         }
 
         public async Task<bool> DeleteUser(int id)
