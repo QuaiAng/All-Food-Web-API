@@ -194,6 +194,8 @@ public partial class AllfoodDbContext : DbContext
 
             entity.ToTable("order");
 
+            entity.HasIndex(e => e.UserId, "FK_User_Order");
+
             entity.Property(e => e.OrderId)
                 .HasColumnType("int(11)")
                 .HasColumnName("order_id");
@@ -227,6 +229,14 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Total)
                 .HasColumnType("int(11)")
                 .HasColumnName("total");
+            entity.Property(e => e.UserId)
+                .HasColumnType("int(11)")
+                .HasColumnName("user_id");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_User_Order");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
@@ -251,6 +261,9 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.Price)
                 .HasColumnType("int(11)")
                 .HasColumnName("price");
+            entity.Property(e => e.ProductName)
+                .HasColumnType("text")
+                .HasColumnName("product_name");
             entity.Property(e => e.Quantity)
                 .HasColumnType("int(11)")
                 .HasColumnName("quantity");

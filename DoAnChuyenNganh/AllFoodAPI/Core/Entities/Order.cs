@@ -27,7 +27,11 @@ public partial class Order
 
     public string PhoneNum { get; set; } = null!;
 
+    public int UserId { get; set; }
+
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+
+    public virtual User User { get; set; } = null!;
 }

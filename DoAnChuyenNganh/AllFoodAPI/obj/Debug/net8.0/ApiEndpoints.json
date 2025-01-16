@@ -430,6 +430,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/order",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "AddOrder",
+    "RelativePath": "api/order/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "AllFoodAPI.WebApi.Models.Order.AddOrderModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/order/orderId={orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AllFoodAPI.Core.DTOs.AddressDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "DeleteShop",
+    "RelativePath": "api/order/remove/{orderId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "Get\u1ECEderByUserId",
+    "RelativePath": "api/order/userId={userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.ProductController",
     "Method": "GetAllProducts",
     "RelativePath": "api/product",
@@ -869,7 +953,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AllFoodAPI.Core.DTOs.AddressDTO",
+        "Type": "AllFoodAPI.Core.DTOs.ProductDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

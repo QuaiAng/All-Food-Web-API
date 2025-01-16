@@ -49,7 +49,7 @@ namespace AllFoodAPI.WebApi.Controllers
         }
 
         [HttpGet("shopId={shopId:int}")]
-        public async Task<ActionResult<AddressDTO>> GetShopById(int shopId)
+        public async Task<ActionResult<ProductDTO>> GetShopById(int shopId)
         {
             if (shopId == 0) return BadRequest(new { success = false, message = "ID không hợp lệ." });
             try

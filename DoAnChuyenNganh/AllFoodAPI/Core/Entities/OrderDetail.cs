@@ -15,6 +15,8 @@ public partial class OrderDetail
 
     public string? Note { get; set; }
 
+    public string ProductName { get; set; } = null!;
+
     public virtual Order Order { get; set; } = null!;
 
     public virtual Product Product { get; set; } = null!;

@@ -49,8 +49,8 @@ namespace AllFoodAPI.Application.Service
         {
             try
             {
-                var address = await _repository.GetShopById(shopId);
-                if (address == null) throw new DuplicateException("Shop", "Không tìm shop này");
+                var shop = await _repository.GetShopById(shopId);
+                if (shop == null) throw new DuplicateException("Shop", "Không tìm shop này");
                 return await _repository.DeleteShop(shopId);
             }
             catch (Exception ex)
