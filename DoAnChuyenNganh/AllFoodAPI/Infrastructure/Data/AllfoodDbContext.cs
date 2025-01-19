@@ -31,10 +31,6 @@ public partial class AllfoodDbContext : DbContext
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
-    public virtual DbSet<OrderFromCusDetail> OrderFromCusDetails { get; set; }
-
-    public virtual DbSet<OrdersFromCu> OrdersFromCus { get; set; }
-
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<Report> Reports { get; set; }
@@ -219,6 +215,9 @@ public partial class AllfoodDbContext : DbContext
             entity.Property(e => e.PhoneNum)
                 .HasMaxLength(20)
                 .HasColumnName("phone_num");
+            entity.Property(e => e.ShopId)
+                .HasColumnType("int(11)")
+                .HasColumnName("shop_id");
             entity.Property(e => e.ShopName)
                 .HasMaxLength(255)
                 .HasColumnName("shop_name");
@@ -270,83 +269,11 @@ public partial class AllfoodDbContext : DbContext
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("order_detail_ibfk_1");
+                .HasConstraintName("fk_order_detail_order");
 
             entity.HasOne(d => d.Product).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("order_detail_ibfk_2");
-        });
-
-        modelBuilder.Entity<OrderFromCusDetail>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("order_from_cus_detail");
-
-            entity.HasIndex(e => e.OrderId, "order_id");
-
-            entity.HasIndex(e => e.ProductId, "product_id");
-
-            entity.Property(e => e.Note)
-                .HasColumnType("text")
-                .HasColumnName("note");
-            entity.Property(e => e.OrderId)
-                .HasColumnType("int(11)")
-                .HasColumnName("order_id");
-            entity.Property(e => e.Price)
-                .HasColumnType("int(11)")
-                .HasColumnName("price");
-            entity.Property(e => e.ProductId)
-                .HasColumnType("int(11)")
-                .HasColumnName("product_id");
-            entity.Property(e => e.Quantity)
-                .HasColumnType("int(11)")
-                .HasColumnName("quantity");
-            entity.Property(e => e.Total)
-                .HasColumnType("int(11)")
-                .HasColumnName("total");
-
-            entity.HasOne(d => d.Order).WithMany()
-                .HasForeignKey(d => d.OrderId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("order_from_cus_detail_ibfk_1");
-
-            entity.HasOne(d => d.Product).WithMany()
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("order_from_cus_detail_ibfk_2");
-        });
-
-        modelBuilder.Entity<OrdersFromCu>(entity =>
-        {
-            entity.HasKey(e => e.OrderId).HasName("PRIMARY");
-
-            entity.ToTable("orders_from_cus");
-
-            entity.HasIndex(e => e.ShopId, "fk_shop_id");
-
-            entity.Property(e => e.OrderId)
-                .HasColumnType("int(11)")
-                .HasColumnName("order_id");
-            entity.Property(e => e.Date).HasColumnName("date");
-            entity.Property(e => e.DeliveryAddress)
-                .HasColumnType("text")
-                .HasColumnName("delivery_address");
-            entity.Property(e => e.ShopId)
-                .HasColumnType("int(11)")
-                .HasColumnName("shop_id");
-            entity.Property(e => e.Status).HasColumnName("status");
-            entity.Property(e => e.Total)
-                .HasColumnType("int(11)")
-                .HasColumnName("total");
-            entity.Property(e => e.UserId)
-                .HasColumnType("int(11)")
-                .HasColumnName("user_id");
-
-            entity.HasOne(d => d.Shop).WithMany(p => p.OrdersFromCus)
-                .HasForeignKey(d => d.ShopId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_shop_id");
         });
 
         modelBuilder.Entity<Product>(entity =>

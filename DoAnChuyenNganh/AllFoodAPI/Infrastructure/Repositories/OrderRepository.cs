@@ -19,16 +19,9 @@ namespace AllFoodAPI.Infrastructure.Repositories
             {
                 _context.Orders.Add(order);
                 int result = await _context.SaveChangesAsync();
-                if(result > 0)
-                {
-                    foreach (var item in order.OrderDetails)
-                    {
-                        item.OrderId = order.OrderId;
-                        _context.OrderDetails.Add(item);
-                    }
-                    return await _context.SaveChangesAsync() > 0;
-                }
-                return false;
+                var newOrder = await _context.Orders.SingleOrDefaultAsync(u => u.OrderId == order.OrderId);
+               
+                return result > 0;
             }
             catch (Exception ex)
             {
@@ -78,6 +71,19 @@ namespace AllFoodAPI.Infrastructure.Repositories
                 if (order == null)
                     return null;
                 return order;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<Order>> GetOrdersByShopId(int shopId)
+        {
+            try
+            {
+                var orders = await _context.Orders.Where(u => u.ShopId == shopId && u.Status == true).Include(p => p.OrderDetails).ToListAsync();
+                return orders;
             }
             catch (Exception ex)
             {

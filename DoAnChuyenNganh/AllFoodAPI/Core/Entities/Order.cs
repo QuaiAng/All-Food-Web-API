@@ -29,6 +29,8 @@ public partial class Order
 
     public int UserId { get; set; }
 
+    public int ShopId { get; set; }
+
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();

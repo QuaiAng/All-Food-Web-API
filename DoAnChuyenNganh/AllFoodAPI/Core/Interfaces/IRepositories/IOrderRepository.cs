@@ -9,6 +9,7 @@ namespace AllFoodAPI.Core.Interfaces.IRepositories
         Task<IEnumerable<Order>> GetAllOrders();
         Task<Order?> GetOrderById(int orderId);
         Task<IEnumerable<Order>> GetOrdersByUserId(int userId);
+        Task<IEnumerable<Order>> GetOrdersByShopId(int shopId);
         Task<bool> AddOrder(Order order);
         Task<bool> UpdateOrder(Order order);
         Task<bool> DeleteOrder(int orderId);

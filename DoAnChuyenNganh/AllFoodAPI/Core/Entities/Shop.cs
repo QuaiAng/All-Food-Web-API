@@ -23,8 +23,6 @@ public partial class Shop
 
     public virtual ICollection<Category> Categories { get; set; } = new List<Category>();
 
-    public virtual ICollection<OrdersFromCu> OrdersFromCus { get; set; } = new List<OrdersFromCu>();
-
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
     public virtual User User { get; set; } = null!;

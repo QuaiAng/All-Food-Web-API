@@ -499,6 +499,22 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
+    "Method": "GetOrderByShopId",
+    "RelativePath": "api/order/shopId={shopId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shopId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
     "Method": "UpdateOrder",
     "RelativePath": "api/order/update/orderId={orderId}/userId={userId}/orderStatus={orderStatus}",
     "HttpMethod": "PUT",
@@ -525,7 +541,7 @@
   },
   {
     "ContainingType": "AllFoodAPI.WebApi.Controllers.OrderController",
-    "Method": "Get\u1ECEderByUserId",
+    "Method": "GetOrderByUserId",
     "RelativePath": "api/order/userId={userId}",
     "HttpMethod": "GET",
     "IsController": true,

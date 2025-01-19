@@ -105,6 +105,24 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
+        public async Task<IEnumerable<OrderDTO>> GetOrdersByShopId(int shopId)
+        {
+            try
+            {
+                //if (await _userRepository.GetUserById(userId) == null) throw new DuplicateException("User ID", "User ID không tồn tại");
+                var orders = await _repository.GetOrdersByShopId(shopId);
+
+                var orderDTOs = orders.Select(u => OrderDTO.FromEntity(u));
+                return orderDTOs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw new ApplicationException("Xảy ra lỗi khi truy vấn", ex);
+            }
+        }
+
         public async Task<IEnumerable<OrderDTO>> GetOrdersByUserId(int userId)
         {
             try

@@ -53,12 +53,26 @@ namespace AllFoodAPI.WebApi.Controllers
 
 
         [HttpGet("userId={userId:int}")]
-        public async Task<IActionResult> GetỎderByUserId(int userId)
+        public async Task<IActionResult> GetOrderByUserId(int userId)
         {
             if (userId == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ." });
             try
             {
                 var orders = await _service.GetOrdersByUserId(userId);
+                return Ok(new { success = true, data = orders });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet("shopId={shopId:int}")]
+        public async Task<IActionResult> GetOrderByShopId(int shopId)
+        {
+            if (shopId == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ." });
+            try
+            {
+                var orders = await _service.GetOrdersByShopId(shopId);
                 return Ok(new { success = true, data = orders });
             }
             catch (Exception ex)

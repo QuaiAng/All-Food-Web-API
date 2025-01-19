@@ -11,6 +11,18 @@
       "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\application\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\core\\interfaces\\irepositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\interfaces\\irepositories\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\core\\interfaces\\iservices\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\core\\interfaces\\iservices\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|d:\\doanchuyennganh\\webapi\\all-food-web-api\\doanchuyennganh\\allfoodapi\\webapi\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F035841-7915-406E-8A42-081612365195}|AllFoodAPI\\AllFoodAPI.csproj|solutionrelative:allfoodapi\\webapi\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,8 +34,47 @@
       "DocumentGroups": [
         {
           "DockedHeight": 207,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\IOrderService.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IServices\\IOrderService.cs",
+              "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IServices\\IOrderService.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IServices\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:59:57.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IOrderRepository.cs",
+              "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Core\\Interfaces\\IRepositories\\IOrderRepository.cs",
+              "RelativeToolTip": "AllFoodAPI\\Core\\Interfaces\\IRepositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T13:59:32.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "AllFoodAPI\\Infrastructure\\Repositories\\OrderRepository.cs",
+              "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "AllFoodAPI\\Infrastructure\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAIwFQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T12:36:24.591Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,14 +83,14 @@
               "RelativeDocumentMoniker": "AllFoodAPI\\Application\\Service\\OrderService.cs",
               "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\Application\\Service\\OrderService.cs",
               "RelativeToolTip": "AllFoodAPI\\Application\\Service\\OrderService.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAgwHIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T04:46:28.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ShopController.cs",
               "DocumentMoniker": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\ShopController.cs",
@@ -47,8 +98,7 @@
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\ShopController.cs",
               "ViewState": "AgIAAKEAAAAAAAAAAAAAALQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T04:42:35.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T04:42:35.106Z"
             },
             {
               "$type": "Document",
@@ -58,7 +108,7 @@
               "RelativeDocumentMoniker": "AllFoodAPI\\WebApi\\Controllers\\OrderController.cs",
               "ToolTip": "D:\\DoAnChuyenNganh\\WebAPI\\All-Food-Web-API\\DoAnChuyenNganh\\AllFoodAPI\\WebApi\\Controllers\\OrderController.cs",
               "RelativeToolTip": "AllFoodAPI\\WebApi\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAqwIgAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAIwEoAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-19T04:42:33.672Z",
               "EditorCaption": ""

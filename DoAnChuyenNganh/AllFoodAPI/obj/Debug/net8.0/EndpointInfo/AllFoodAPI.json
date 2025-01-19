@@ -779,6 +779,29 @@
         }
       }
     },
+    "/api/order/shopId={shopId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "shopId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/order/add": {
       "post": {
         "tags": [
@@ -2640,6 +2663,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "shopId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "orderDetails": {
             "type": "array",
             "items": {
@@ -2722,41 +2749,6 @@
           "productName": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrdersFromCu": {
-        "type": "object",
-        "properties": {
-          "orderId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "date": {
-            "$ref": "#/components/schemas/DateOnly"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "deliveryAddress": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "boolean"
-          },
-          "shopId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "shop": {
-            "$ref": "#/components/schemas/Shop"
           }
         },
         "additionalProperties": false
@@ -3114,13 +3106,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Category"
-            },
-            "nullable": true
-          },
-          "ordersFromCus": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrdersFromCu"
             },
             "nullable": true
           },
