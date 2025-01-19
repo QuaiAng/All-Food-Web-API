@@ -126,7 +126,44 @@ namespace AllFoodAPI.WebApi.Controllers
             }
 
         }
-        
-    
-}
+
+        [HttpPut("update/orderId={orderId:int}/userId={userId:int}/orderStatus={orderStatus:int}")]
+        public async Task<IActionResult> UpdateOrder(int orderId, int userId, int orderStatus)
+        {
+            try
+            {
+                if (orderId == 0) return BadRequest(new { success = false, message = "Order ID không hợp lệ" });
+                if (userId == 0) return BadRequest(new { success = false, message = "User ID không hợp lệ" });
+                if (orderStatus < 0 || orderStatus > 3) return BadRequest(new { success = false, message = "Order Status không hợp lệ" });
+                
+                var result = await _service.UpdateOrder(orderId, userId, orderStatus);
+                return result ? Ok(new
+                {
+                    success = true,
+                    message = "Cập nhật thành công"
+                }) : StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    success = false,
+                    message = "Xảy ra lỗi"
+                });
+            }
+            catch (DuplicateException ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    field = ex.Field,
+                    message = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+
+    }
 }

@@ -21,11 +21,11 @@ namespace AllFoodAPI.Infrastructure.Repositories
                 int result = await _context.SaveChangesAsync();
                 if(result > 0)
                 {
-                    //foreach(var item in order.OrderDetails)
-                    //{
-                    //    item.OrderId = order.OrderId;
-                    //    _context.OrderDetails.Add(item);
-                    //}
+                    foreach (var item in order.OrderDetails)
+                    {
+                        item.OrderId = order.OrderId;
+                        _context.OrderDetails.Add(item);
+                    }
                     return await _context.SaveChangesAsync() > 0;
                 }
                 return false;
@@ -100,7 +100,21 @@ namespace AllFoodAPI.Infrastructure.Repositories
 
         public async Task<bool> UpdateOrder(Order order)
         {
-            return true;
+            try
+            {
+                var orderUpdate = await _context.Orders.SingleOrDefaultAsync(u => u.OrderId == order.OrderId);
+                if (orderUpdate == null)
+                {
+                    return false;
+                }
+                _context.Orders.Update(orderUpdate);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
 }

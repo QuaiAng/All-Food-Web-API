@@ -40,6 +40,7 @@ namespace AllFoodAPI.Application.Service
                     OrderDetails = order.OrderDetails.Select(u => new OrderDetail
                     {
                         OrderId = u.OrderId,
+                        ProductId = u.ProductId,
                         Note = u.Note,
                         Price = u.Price,
                         ProductName = u.ProductName,
@@ -122,9 +123,27 @@ namespace AllFoodAPI.Application.Service
             }
         }
 
-        public Task<bool> UpdateOrder(OrderDTO orderDTO)
+        public async Task<bool> UpdateOrder(int orderId, int userId, int orderStatus)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (await _userRepository.GetUserById(userId) == null) throw new DuplicateException("User ID", "User ID không tồn tại");
+                var orderUpdate = await _repository.GetOrderById(orderId);
+                if (orderUpdate == null)
+                {
+                    return false;
+                }
+
+                orderUpdate.OrderStatus = orderStatus;
+                return await _repository.UpdateOrder(orderUpdate);
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                throw;
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace AllFoodAPI.Core.Interfaces.IServices
         Task<IEnumerable<OrderDTO>> GetOrdersByUserId(int userId);
         Task<OrderDTO?> GetOrderById(int orderId);
         Task<bool> AddOrder(AddOrderModel order);
-        Task<bool> UpdateOrder(OrderDTO orderDTO);
+        Task<bool> UpdateOrder(int orderId, int userId, int orderStatus);
         Task<bool> DeleteOrder(int orderId);
     }
 }
